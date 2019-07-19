@@ -1,5 +1,5 @@
 # LeeComponent
- 微信小程序 组件库
+ 微信小程序 组件库 lee-components 导入项目使用
  
  ### 目的
  1. 学习And练习微信小程序组件开发
