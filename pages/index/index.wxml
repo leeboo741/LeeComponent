@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view wx:for="{{dataSource}}"
+      wx:for-item='item'
+      wx:for-index='index'
+      wx:key='{{index}}'
+      class='row'
+      bindtap='tapRow'
+      data-target='{{item.target}}'>
+{{item.name}}      
+</view>

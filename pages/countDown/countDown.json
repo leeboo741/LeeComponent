@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "lee-count-down": "/lee-components/leeCountDown/index"
+  },
+  "navigationBarTitleText": "倒计时"
+}

@@ -1,0 +1,15 @@
+<!--pages/countDown/countDown.wxml-->
+<lee-count-down target='{{countDownTarget}}'
+                stopCountDown='{{stopCountDown}}'
+                bind:countdown-end='countDownEnd'
+                bind:countdown-stop='countDownStop'
+                bind:countdown-restart='countDownRestart'>
+</lee-count-down>
+<button bindtap='stopAndRestart'>暂停|开始</button>
+<lee-count-down i-class='customer-class'
+                target='{{countDownTarget}}'
+                stopCountDown='{{stopCountDown}}'
+                bind:countdown-end='countDownEnd'
+                bind:countdown-stop='countDownStop'
+                bind:countdown-restart='countDownRestart'>
+</lee-count-down>
