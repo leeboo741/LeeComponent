@@ -1,0 +1,11 @@
+<!--pages/showTime/showTime.wxml-->
+<lee-show-time i-class='show-time-class'
+               showType='{{dateFormat}}'
+               yearDuration='{{yearDuration}}'
+               monthDuration='{{monthDuration}}'
+               weekDuration='{{weekDuration}}'
+               dayDuration='{{dayDuration}}'
+               hourDuration='{{hourDuration}}'
+               minDuration='{{minDuration}}'
+               secDuration='{{secDuration}}'>
+</lee-show-time>

@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/countDown/countDown"
+    "pages/countDown/countDown",
+    "pages/showTime/showTime"
   ],
   "window": {
     "backgroundTextStyle": "light",

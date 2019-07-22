@@ -9,7 +9,11 @@ Page({
       {
         name: "倒计时",
         target: "../countDown/countDown"
-      }
+      },
+      {
+        name: "时间展示",
+        target: "../showTime/showTime"
+      },
     ],
   },
   

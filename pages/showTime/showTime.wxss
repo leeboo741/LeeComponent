@@ -1,0 +1,13 @@
+/* pages/showTime/showTime.wxss */
+
+.show-time-class{
+  background: red;
+  color: white;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 15rpx 20rpx;
+  border-radius: 10rpx;
+  margin: auto;
+  text-align: center;
+  width: 80%;
+}
