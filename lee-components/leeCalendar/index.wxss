@@ -1,0 +1,22 @@
+/* lee-components/leeCalendar/index.wxss */
+.calendar-area{
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid lightgray;
+}
+
+.calendar-header-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+  font-size: 28rpx;
+  padding: 10rpx;
+}

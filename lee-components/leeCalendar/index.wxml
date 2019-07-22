@@ -1,0 +1,26 @@
+<!--lee-components/leeCalendar/index.wxml-->
+<!-- 容器样式 接受大小等等内容 因为内部的样式如果接受外部的话，容易造成日历的样式错乱 -->
+<view class='i-class'>
+  <!-- 日历内容 -->
+  <view class='calendar-area'>
+    <!-- 日历头部 展示星期 -->
+    <view class='calendar-header'>
+      <view class='calendar-header-item'
+            wx:for='{{weeks}}'
+            wx:for-item='weekItem'
+            wx:for-index='weekIndex'
+            wx:key='{{weekIndex}}'>
+        <view class='i-week-title-class'>
+        {{weekItem}}
+        </view>
+      </view>
+    </view>
+    <!-- 日历本体 -->
+    <view class='calendar-content'>
+      
+    </view>
+    <!-- 日历底部 -->
+    <view class='calendar-footer'>
+    </view>
+  </view>
+</view>

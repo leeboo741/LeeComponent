@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/countDown/countDown",
-    "pages/showTime/showTime"
+    "pages/showTime/showTime",
+    "pages/calendar/calendar"
   ],
   "window": {
     "backgroundTextStyle": "light",

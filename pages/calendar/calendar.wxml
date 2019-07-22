@@ -1,0 +1,3 @@
+<!--pages/calendar/calendar.wxml-->
+<i-calendar i-class='calendar'>
+</i-calendar>

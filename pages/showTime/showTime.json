@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "lee-show-time": "/lee-components/leeShowTime/index"
-  }
+  },
+  "navigationBarTitleText": "时间展示"
 }

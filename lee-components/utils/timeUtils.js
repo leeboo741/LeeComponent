@@ -55,6 +55,44 @@ function getDate(targetDate,
 }
 
 /**
+ * 获取月份第一天
+ * @param date 目标时间
+ */
+function getStartDayForMonth(date){
+  let startDateOfMonth = date.setDate(1);
+  return new Date(startDateOfMonth);
+}
+
+/**
+ * 获取月份最后一天
+ * @param date 目标时间
+ */
+function getEndDayForMonth(date) {
+  let endDateOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0); // 获取本月最后一天
+  return new Date(endDateOfMonth);
+}
+
+/**
+ * 获取月份天数
+ * @param date 目标时间
+ */
+function getDayCountForMonth(date){
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  if (month == 1 | month == 3 | month == 5 | month == 7 | month == 8 | month == 10 | month == 12) {
+    return 31;
+  } else if (month == 4 | month == 6 | month == 9 | month == 11) {
+    return 30;
+  } else {
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0 && year % 3200 != 0) || year % 172800 == 0) {
+      return 29;
+    } else {
+      return 28;
+    }
+  }
+}
+
+/**
  * 获取格式化时间
  * @param date 时间
  * @param format 格式
@@ -102,6 +140,9 @@ function dateFormat(date, format) {
 }
 
 module.exports = {
-  getDate: getDate,
-  dateFormat: dateFormat
+  getDate: getDate, // 获取时间
+  dateFormat: dateFormat, // 获取格式化时间
+  getStartDayForMonth: getStartDayForMonth, // 获取当月第一天
+  getEndDayForMonth: getEndDayForMonth, // 获取当月最后一天
+  getDayCountForMonth: getDayCountForMonth, // 获取当月天数
 }

@@ -7,13 +7,17 @@ Page({
   data: {
     dataSource: [
       {
-        name: "倒计时",
+        name: "倒计时 -- leeCountDown",
         target: "../countDown/countDown"
       },
       {
-        name: "时间展示",
+        name: "时间展示 -- leeShowTime",
         target: "../showTime/showTime"
       },
+      {
+        name: "日历 -- leeCalendar",
+        target: "../calendar/calendar"
+      }
     ],
   },
   

@@ -17,6 +17,9 @@
   border-style: none none solid none;
   border-width: 1rpx;
   border-color: #dddee1;
+  font-size: 32rpx;
+  color: #778899;
+  font-weight: bold;
 }
 .row-title{
   font-size: 36rpx;

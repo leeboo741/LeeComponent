@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-calendar": "/lee-components/leeCalendar/index"
+  },
+  "navigationBarTitleText": "日历"
+}
