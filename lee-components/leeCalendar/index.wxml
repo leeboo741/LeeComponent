@@ -15,12 +15,50 @@
         </view>
       </view>
     </view>
+    <!-- 月份 -->
+    <view class='calendar-title'>
+      <view class='calendar-title-text'>{{currentPageTitle}}</view>
+    </view>
     <!-- 日历本体 -->
     <view class='calendar-content'>
-      
+      <view class='calendar-day'
+            wx:for='{{dayDataSource}}'
+            wx:for-item='dayItem'
+            wx:for-index='dayIndex'
+            wx:key='{{dayIndex}}'
+            bindtap='tapDayItem'
+            data-index='{{dayIndex}}'
+            data-day='{{dayItem.day}}'
+            data-month='{{dayItem.month}}'
+            data-year='{{dayItem.year}}'>
+        <view wx:if='{{dayItem == null}}' class='calendar-day-item-empty i-day-item-empty-class'>
+          <slot></slot>
+        </view>
+        <view wx:else class='calendar-day-item i-day-item-class'>
+          <!-- // today 红色 | warning 红色 | alert 黄色 | remind 蓝色 | complete 绿色 | default 灰色 -->
+          <view class='calendar-day-item-title i-day-item-title-class {{dayItem.lightingType=="today"?"today":""}} {{dayItem.lightingType=="warning"?"warning":""}} {{dayItem.lightingType=="alert"?"alert":""}} {{dayItem.lightingType=="remind"?"remind":""}} {{dayItem.lightingType=="complete"?"complete":""}} {{dayItem.lightingType=="default"?"default":""}}'>
+          {{dayItem.day}}
+          </view>
+          <view class='calendar-day-item-lighting i-day-item-lighting-class {{dayItem.lightingType=="today"?"today":""}} {{dayItem.lightingType=="warning"?"warning":""}} {{dayItem.lightingType=="alert"?"alert":""}} {{dayItem.lightingType=="remind"?"remind":""}} {{dayItem.lightingType=="complete"?"complete":""}}'>
+          </view>
+        </view>
+      </view>
     </view>
     <!-- 日历底部 -->
     <view class='calendar-footer'>
+      <view class='calendar-month-selecter'>
+        <view class='calendar-month-selecter-button'
+              bindtap='tapMonthSelecter'
+              data-type='last'>
+          <view class='calendar-month-selecter-button-title'>上个月</view>
+        </view>
+        <view class='calendar-month-selecter-button'
+              bindtap='tapMonthSelecter'
+              data-type='next'>
+          <view class='calendar-month-selecter-button-title'>下个月</view>
+        </view>
+      </view>
+      <slot></slot>
     </view>
   </view>
 </view>
