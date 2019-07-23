@@ -19,6 +19,8 @@
   > 4. 监听中止，重新开始，结束 （bind:countdown-stop | bind:countdown-restart | bind:countdown-end）
   > 5. 接受外部样式（i-class)
   
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/countDown.png)
+  
  ##### 时间展示 LeeShowTime
  * 时间
   2019/07/22
@@ -28,6 +30,8 @@
   > 1. 展示指定时间
   > 2. 接受时间格式指定 年（y）月（M）日（d）时（H|h）分（m）秒（s）毫秒（S）周（E）
   > 3. 接受外部样式 （i-class）
+  
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/showTime.png)
   
  ##### 日历 LeeCalendar
  * 时间
@@ -41,6 +45,8 @@
   > 4. 添加子节点，(slot-day-item-empty | slot-calendar-footer)
   > 5. 可以进行月份调整 暂时没想好怎么做年份调整 和 别的时间选择 样式不好决定 所以先放着吧
   > 6. 接受外部样式（"i-class", "i-week-title-class", "i-day-item-empty-class", "i-day-item-class", "i-day-item-title-class", "i-day-item-lighting-class"）
+  
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/calendar.png)
   
   ### 工具目录
   ##### 时间工具包 TimeUtils
