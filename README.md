@@ -39,7 +39,8 @@
   > 2. 日历标注，当日自有标注，并且相对放大，不接受样式改变，另有warning，alert，remind，complete 四种标注颜色可以进行标注
   > 3. 时间选择，可以选中标注和取消
   > 4. 添加子节点，(slot-day-item-empty | slot-calendar-footer)
-  > 5. 接受外部样式（"i-class", "i-week-title-class", "i-day-item-empty-class", "i-day-item-class", "i-day-item-title-class", "i-day-item-lighting-class"）
+  > 5. 可以进行月份调整 暂时没想好怎么做年份调整 和 别的时间选择 样式不好决定 所以先放着吧
+  > 6. 接受外部样式（"i-class", "i-week-title-class", "i-day-item-empty-class", "i-day-item-class", "i-day-item-title-class", "i-day-item-lighting-class"）
   
   ### 工具目录
   ##### 时间工具包 TimeUtils
