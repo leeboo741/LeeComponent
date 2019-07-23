@@ -32,7 +32,7 @@
             data-month='{{dayItem.month}}'
             data-year='{{dayItem.year}}'>
         <view wx:if='{{dayItem == null}}' class='calendar-day-item-empty i-day-item-empty-class'>
-          <slot></slot>
+          <slot name='slot-day-item-empty'></slot>
         </view>
         <view wx:else class='calendar-day-item i-day-item-class'>
           <!-- // today 红色 | warning 红色 | alert 黄色 | remind 蓝色 | complete 绿色 | default 灰色 -->
@@ -58,7 +58,7 @@
           <view class='calendar-month-selecter-button-title'>下个月</view>
         </view>
       </view>
-      <slot></slot>
+      <slot name='slot-calendar-footer'></slot>
     </view>
   </view>
 </view>

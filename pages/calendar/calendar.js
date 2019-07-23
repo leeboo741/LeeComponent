@@ -22,21 +22,41 @@ Page({
         && tempLightDay.year == e.detail.currentTarget.dataset.year) {
         this.data.lightingDayList.splice(i,1);
         isLight = true;
+
+        this.setData({
+          lightingDayList: this.data.lightingDayList
+        })
+        break;
       }
     }
     if (!isLight) {
+      // warning 红色 | alert 黄色 | remind 蓝色 | complete 绿色 
       let tempData = {
         day: e.detail.currentTarget.dataset.day,
         month: e.detail.currentTarget.dataset.month,
         year: e.detail.currentTarget.dataset.year,
-        lightingType: "remind",
       }
-      this.data.lightingDayList.push(tempData);
+      let that = this;
+      wx.showActionSheet({
+        itemList: ["warning", "alert", "remind", "complete"],
+        success(res) {
+          console.log(res.tapIndex)
+          if (res.tapIndex == 0) {
+            tempData.lightingType = 'warning'
+          } else if (res.tapIndex == 1) {
+            tempData.lightingType = 'alert'
+          } else if (res.tapIndex == 2) {
+            tempData.lightingType = 'remind'
+          } else {
+            tempData.lightingType = 'complete'
+          }
+          that.data.lightingDayList.push(tempData);
+          that.setData({
+            lightingDayList: that.data.lightingDayList
+          })
+        },
+      })
     }
-
-    this.setData({
-      lightingDayList: this.data.lightingDayList
-    })
   },
 
   /**
@@ -50,7 +70,7 @@ Page({
     let tempDate5 = timeUtils.getDate(new Date(), 0, 1, 0, 0, 0, 0, 0);
     let tempDate6 = timeUtils.getDate(new Date(), 0, 0, 0, 8, 0, 0, 0);
 
-    // warning 红色 | alert 黄色 | remind 蓝色 | complete 绿色 | default 灰色
+    // warning 红色 | alert 黄色 | remind 蓝色 | complete 绿色 
     let tempData1 = {
       day: tempDate1.getDate(),
       month: tempDate1.getMonth() + 1,

@@ -77,7 +77,7 @@
 
 .warning{
   font-weight: bold;
-  background: #ed3f14;
+  background: #ee2c2c;
   color: white;
 }
 
@@ -112,7 +112,7 @@
   border-radius: 35rpx;
   font-size: 35rpx;
   font-weight: bold;
-  background: #ee2c2c;
+  background: #b2d235;
   color: white;
 }
 
