@@ -62,14 +62,14 @@ Component({
     "showType,yearDuration,monthDuration,weekDuration,dayDuration,hourDuration,minDuration,secDuration": function (showType, yearDuration, monthDuration, weekDuration, dayDuration, hourDuration, minDuration, secDuration){
       this.setData({
         showContent: utils.dateFormat(utils.getDate(new Date(), 
-                                      yearDuration, 
-                                      monthDuration, 
-                                      weekDuration, 
-                                      dayDuration, 
-                                      hourDuration, 
-                                      minDuration, 
-                                      secDuration), 
-                      showType)
+                                                    yearDuration, 
+                                                    monthDuration, 
+                                                    weekDuration, 
+                                                    dayDuration, 
+                                                    hourDuration, 
+                                                    minDuration, 
+                                                    secDuration), 
+                                          showType)
       })
     },
   },
