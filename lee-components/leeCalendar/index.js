@@ -66,7 +66,7 @@ Component({
       this.setData({
         currentPageTitle: timeUtils.dateFormat(date,"yyyy年MM月")
       })
-
+      // 每月第一天的 星期 | 每月最后一天的 星期 | 当月 天数
       let startWeek = timeUtils.getStartDayForMonth(date).getDay();
       let endWeek = timeUtils.getEndDayForMonth(date).getDay();
       let dayCount = timeUtils.getDayCountForMonth(date);
@@ -86,19 +86,26 @@ Component({
         dayData.month = tempDate.getMonth() + 1;
         dayData.year = tempDate.getFullYear();
         dayData.weeks = tempDate.getDay(); 
+        // 如果日期 和 今天日期相符 点亮类型 为 today
+        // 其余的 默认为 default
         if (tempDate.getDate() == this.data.today.getDate()
           && tempDate.getFullYear() == this.data.today.getFullYear()
           && tempDate.getMonth() == this.data.today.getMonth()) {
           dayData.lightingType = "today";
         } else {
           dayData.lightingType = "default";
+          // 日期数据 匹配 点亮列表 并
+          // 点亮列表是否不空 不空 准备匹配
           if (this.properties.lightingDayList != null
             && this.properties.lightingDayList.length > 0) {
+            // 循环点亮列表
             for (let j = 0; j < this.properties.lightingDayList.length; j++) {
               let tempLightingItem = this.properties.lightingDayList[j];
+              // 如果时间 能 匹配上
               if (tempLightingItem.day == dayData.day
                 && tempLightingItem.month == dayData.month
                 && tempLightingItem.year == dayData.year) {
+                // 根据点亮类型 赋值
                 dayData.lightingType = tempLightingItem.lightingType;
                 break;
               }
