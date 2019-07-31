@@ -1,5 +1,6 @@
 // pages/calendar/calendar.js
 const timeUtils = require("../../lee-components/utils/timeUtils.js")
+const {LightingDayObj} = require('../../lee-components/leeCalendar/calendarObj.js')
 Page({
 
   /**
@@ -15,32 +16,29 @@ Page({
   tapCalendarDay: function (e) {
     console.log("点击时间：\n" + JSON.stringify(e))
     let isLight = false;
+    let tempDay = e.detail.currentTarget.dataset.day;
+    let tempMonth = e.detail.currentTarget.dataset.month;
+    let tempYear = e.detail.currentTarget.dataset.year;
+    // 判断是否点亮 点亮就取消
     for (let i = 0; i < this.data.lightingDayList.length; i++) {
-      let tempLightDay = this.data.lightingDayList[i];
-      if (tempLightDay.day == e.detail.currentTarget.dataset.day
-        && tempLightDay.month == e.detail.currentTarget.dataset.month
-        && tempLightDay.year == e.detail.currentTarget.dataset.year) {
-        this.data.lightingDayList.splice(i,1);
+      let tempLightDayObj = this.data.lightingDayList[i];
+      if (tempLightDayObj.compareDateSame(tempYear, tempMonth, tempDay)) {
+        this.data.lightingDayList.splice(i, 1);
         isLight = true;
-
         this.setData({
           lightingDayList: this.data.lightingDayList
         })
         break;
       }
     }
+    // 没有点亮 弹窗 选择点亮方式
     if (!isLight) {
-      // warning 红色 | alert 黄色 | remind 蓝色 | complete 绿色 
-      let tempData = {
-        day: e.detail.currentTarget.dataset.day,
-        month: e.detail.currentTarget.dataset.month,
-        year: e.detail.currentTarget.dataset.year,
-      }
       let that = this;
       wx.showActionSheet({
         itemList: ["warning", "alert", "remind", "complete"],
         success(res) {
           console.log(res.tapIndex)
+          let tempData = new LightingDayObj(tempYear, tempMonth, tempDay);
           if (res.tapIndex == 0) {
             tempData.lightingType = 'warning'
           } else if (res.tapIndex == 1) {
@@ -63,7 +61,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**

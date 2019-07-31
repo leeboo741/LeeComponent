@@ -86,6 +86,7 @@ Component({
         dayData.month = tempDate.getMonth() + 1;
         dayData.year = tempDate.getFullYear();
         dayData.weeks = tempDate.getDay(); 
+        dayData.lightingType = 'default';
         // 如果日期 和 今天日期相符 点亮类型 为 today
         // 其余的 默认为 default
         if (tempDate.getDate() == this.data.today.getDate()
@@ -93,7 +94,6 @@ Component({
           && tempDate.getMonth() == this.data.today.getMonth()) {
           dayData.lightingType = "today";
         } else {
-          dayData.lightingType = "default";
           // 日期数据 匹配 点亮列表 并
           // 点亮列表是否不空 不空 准备匹配
           if (this.properties.lightingDayList != null
@@ -108,7 +108,7 @@ Component({
                 // 根据点亮类型 赋值
                 dayData.lightingType = tempLightingItem.lightingType;
                 break;
-              }
+              } 
             }
           }
         }
