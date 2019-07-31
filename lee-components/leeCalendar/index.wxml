@@ -36,10 +36,10 @@
         </view>
         <view wx:else class='calendar-day-item i-day-item-class'>
           <!-- // today 红色 | warning 红色 | alert 黄色 | remind 蓝色 | complete 绿色 | default 灰色 -->
-          <view class='calendar-day-item-title i-day-item-title-class {{dayItem.lightingType=="today"?"today":""}} {{dayItem.lightingType=="warning"?"warning":""}} {{dayItem.lightingType=="alert"?"alert":""}} {{dayItem.lightingType=="remind"?"remind":""}} {{dayItem.lightingType=="complete"?"complete":""}} {{dayItem.lightingType=="default"?"default":""}}'>
+          <view class='calendar-day-item-title i-day-item-title-class {{lightingType.getTypeClass(dayItem.lightingType, true)}}'>
           {{dayItem.day}}
           </view>
-          <view class='calendar-day-item-lighting i-day-item-lighting-class {{dayItem.lightingType=="today"?"today":""}} {{dayItem.lightingType=="warning"?"warning":""}} {{dayItem.lightingType=="alert"?"alert":""}} {{dayItem.lightingType=="remind"?"remind":""}} {{dayItem.lightingType=="complete"?"complete":""}}'>
+          <view class='calendar-day-item-lighting i-day-item-lighting-class {{lightingType.getTypeClass(dayItem.lightingType, false)}}'>
           </view>
         </view>
       </view>
@@ -62,3 +62,26 @@
     </view>
   </view>
 </view>
+<wxs module='lightingType'>
+  module.exports = {
+    getTypeClass : function(type, showDefaultSpot){
+      if (type == "today") {
+        return "today";
+      } else if (type == "warning") {
+        return "warning";
+      } else if (type == "alert") {
+        return "alert";
+      } else if (type == "remind") {
+        return "remind";
+      } else if (type == "complete") {
+        return "complete";
+      } else {
+        if (showDefaultSpot) {
+          return "default";
+        } else {
+          return "";
+        }
+      }
+    }
+  }
+</wxs>
