@@ -7,9 +7,21 @@
  * @param lightingType 点亮类型 default 灰色 | warning 红色 | alert 黄色 | remind 蓝色 | complete 绿色 
  */
 var LightingDayObj = function (year, month, day, lightingType) {
-  this.day = day;
-  this.month = month;
-  this.year = year;
+  if (year != null) {
+    this.year = year;
+  } else {
+    this.year = 0;
+  }
+  if (month != null) {
+    this.month = month;
+  } else {
+    this.month = 0;
+  }
+  if (day != null) {
+    this.day = day;
+  } else {
+    this.day = 0;
+  }
   if (lightingType != null) {
     this.lightingType = lightingType;
   } else {
