@@ -11,7 +11,7 @@
  * 时间：
   2019/07/19
  * 状态：
-  完成 | 等新想法
+  完成
  * 功能：
   > 1. 中止|重新开始 （stopCountDown）
   > 2. 重新设置倒计时时间（target）
@@ -25,7 +25,7 @@
  * 时间
   2019/07/22
  * 状态
-  完成 | 等新想法
+  完成
  * 功能
   > 1. 展示指定时间
   > 2. 接受时间格式指定 年（y）月（M）日（d）时（H|h）分（m）秒（s）毫秒（S）周（E）
@@ -37,7 +37,7 @@
  * 时间
   2019/07/22
  * 状态
-  完成 | 等新想法
+  完成
  * 功能
   > 1. 展示日历，日期，星期，年份
   > 2. 日历标注，当日自有标注，并且相对放大，不接受样式改变，另有warning，alert，remind，complete 四种标注颜色可以进行标注
@@ -47,6 +47,19 @@
   > 6. 接受外部样式（"i-class", "i-week-title-class", "i-day-item-empty-class", "i-day-item-class", "i-day-item-title-class", "i-day-item-lighting-class"）
   
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/calendar.png)
+  
+ ##### 图标icon LeeIcon
+ * 时间
+  2019/08/01
+ * 状态
+  完成
+ * 功能
+  > 1. 内置87个iconfont上的图标
+  > 2. type 样式 size 大小 color 颜色
+  > 3. 接受外部样式（"i-class"）
+  > 4. 接受自定义图标（"custome"）
+  
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/icon.png)
   
   ### 工具目录
   ##### 时间工具包 TimeUtils
