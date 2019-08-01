@@ -35,7 +35,7 @@
   
  ##### 日历 LeeCalendar
  * 时间
-  2019/07/23
+  2019/07/31
  * 状态
   完成
  * 功能
@@ -45,6 +45,7 @@
   > 4. 添加子节点，(slot-day-item-empty | slot-calendar-footer)
   > 5. 可以进行月份调整 暂时没想好怎么做年份调整 和 别的时间选择 样式不好决定 所以先放着吧
   > 6. 接受外部样式（"i-class", "i-week-title-class", "i-day-item-empty-class", "i-day-item-class", "i-day-item-title-class", "i-day-item-lighting-class"）
+  > 7. 接受传入 LightingDayObj （/calendarObj/LightingDayObj） 对象
   
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/calendar.png)
   
@@ -54,7 +55,7 @@
  * 状态
   完成
  * 功能
-  > 1. 内置87个iconfont上的图标
+  > 1. 内置96个iconfont上的图标（具体请查看demo）
   > 2. type 样式 size 大小 color 颜色
   > 3. 接受外部样式（"i-class"）
   > 4. 接受自定义图标（"custome"）
