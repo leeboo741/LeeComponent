@@ -1,0 +1,32 @@
+/* pages/icon/icon.wxss */
+.page{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon-grid{
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30rpx 0rpx;
+  border-color: lightgray;
+  border-width: 1rpx;
+  border-style: solid;
+}
+
+.icon-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-title{
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}

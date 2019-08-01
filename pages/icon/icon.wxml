@@ -1,0 +1,32 @@
+<!--pages/icon/icon.wxml-->
+<view class="page">
+  <view class="icon-grid"
+        wx:for='{{iconData}}'
+        wx:for-item='iconItem'
+        wx:for-index='iconIndex'
+        wx:key='{{iconIndex}}'
+        bindtap="tapIcon"
+        data-index='{{iconIndex}}'>
+    <view class="icon-item">
+      <i-icon type="{{iconItem.iconType}}"
+              size='{{iconItem.iconSize}}'
+              color="{{parse.getColor(iconItem)}}">
+      </i-icon>
+      <view class="icon-title"
+            style="color:{{parse.getColor(iconItem)}};">
+      {{iconItem.iconType}}
+      </view>
+    </view>
+  </view>
+</view>
+<wxs module='parse'>
+   module.exports = {
+    getColor : function(iconItem){
+      if (iconItem.iconSelected) {
+        return iconItem.iconSelectedColor;
+      } else {
+        return iconItem.iconNormalColor;
+      }
+    }
+  }
+</wxs>

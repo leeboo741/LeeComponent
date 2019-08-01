@@ -17,6 +17,10 @@ Page({
       {
         name: "日历 -- leeCalendar",
         target: "../calendar/calendar"
+      },
+      {
+        name: "图标 -- leeIcon",
+        target: "../icon/icon"
       }
     ],
   },

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-icon": "/lee-components/leeIcon/index"
+  },
+  "navigationBarTitleText": "图标"
+}
