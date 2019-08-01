@@ -21,6 +21,10 @@ Page({
       {
         name: "图标 -- leeIcon",
         target: "../icon/icon"
+      },
+      {
+        name: "通知 | 公告 -- leeNotice",
+        target: "../notice/notice"
       }
     ],
   },

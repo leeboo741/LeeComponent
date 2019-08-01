@@ -4,7 +4,8 @@
     "pages/countDown/countDown",
     "pages/showTime/showTime",
     "pages/calendar/calendar",
-    "pages/icon/icon"
+    "pages/icon/icon",
+    "pages/notice/notice"
   ],
   "window": {
     "backgroundTextStyle": "light",
