@@ -18,14 +18,37 @@ Component({
       type: Boolean,
       value: false,
     }, // 是否显示关闭按钮
-
+    showIcon:{
+      type: Boolean,
+      value: true,
+    }, // 是否展示 icon
+    iconType: {
+      type: String,
+      value: null,
+    }, // 图标类型 有就会显示图标
+    iconSize: {
+      type: Number,
+      value: 40,
+    }, // 图标大小
+    iconColor: {
+      type: String,
+      value: "#ee2c2c",
+    }, // 图标颜色
+    iconCustom: {
+      type: String,
+      value: null,
+    }, // 自定义 icon
+    notices: {
+      type: Array,
+      value: null,
+    }, // 通知内容
   },
 
   /**
    * 组件的初始数据 内部属性
    */
   data: {
-
+    show: true,
   },
 
   /**
