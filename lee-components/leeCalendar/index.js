@@ -143,7 +143,9 @@ Component({
         'composed': false, // 事件是否可以穿越组件边界，为false时，事件将只能在引用组件的节点树上触发，不进入其他任何组件内部
         'capturePhase': false, // 事件是否拥有捕获阶段
       }; // 触发事件的选项
-      this.triggerEvent(callBackFunctionName, myEventDetail, myEventOption);
+      if (this.data.dayDataSource[e.currentTarget.dataset.index] != null) {
+        this.triggerEvent(callBackFunctionName, myEventDetail, myEventOption);
+      }
     },
 
     /**
