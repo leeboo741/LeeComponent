@@ -25,7 +25,19 @@ Page({
       {
         name: "通知 | 公告 -- leeNotice",
         target: "../notice/notice"
-      }
+      },
+      {
+        name: "获取验证码按钮 -- leeGetVerifiCodeButton",
+        target: ""
+      },
+      {
+        name: "自定义NavigationBar -- leeNavigationBar",
+        target: ""
+      },
+      {
+        name: "电话 -- leePhoneCall",
+        target: ""
+      },
     ],
   },
   
