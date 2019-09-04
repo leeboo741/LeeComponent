@@ -62,6 +62,21 @@
   
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/icon.png)
   
+  ##### 自定义NavigationBar LeeNavigationBar
+ * 时间
+  2019/09/04
+ * 状态
+  完成
+ * 功能
+  > 1. 使用自定义NavigationBar需要先在app.json => windows中添加 "navigationStyle": "custom"，并且会影响所有页面
+  > 2. 可以自定义左侧自定义按钮的图标，目前仅支持leeIcon库中的图标
+  > 3. 可以自定义中间区域的标题栏，可以使用自定义的其他控件或者View来代替
+  > 4. 回退按钮目前默认调用navigationBack delta:1，在考虑要不要开放出来 自主选择回退方式
+  > 5. 如果想做贯通式的抬头，可以尝试将背景颜色设置为透明色，ableFloat设置为true，正常页面流中的数据就会从最顶部贯通展示
+  
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/navigationBar_1.png)
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/navigationBar_2.png)
+  
   ### 工具目录
   ##### 时间工具包 TimeUtils
   > 1. getDate() 
