@@ -1,0 +1,38 @@
+<!--pages/navigationBar/navigationBar.wxml-->
+<i-navigation-bar ableFloat='{{false}}'
+                  title='自定义NavigationBar'
+                  titleColor='#ffffff'
+                  titleSize='32'
+                  titleWeight='bold'
+                  showCustomCenter='{{false}}'
+                  backgroundColor='#000000'
+                  showBackButton='{{true}}'
+                  showCustomButton='{{true}}'
+                  customButtonIconType='home'
+                  iconBackgroundColor='#ffffff99'
+                  iconColor='#000000'
+                  bind:tapcustom='tapCustomButton'>
+  <view class="navi-title"
+        bindtap="tapCustomNaviTitle">
+  测试自定义组件
+  </view>
+</i-navigation-bar>
+
+<view class="content">
+1. 使用自定义NavigationBar需要先在app.json => windows中添加 "navigationStyle": "custom"，并且会影响所有页面 \n
+</view>
+<view class="content">
+2. 可以自定义左侧自定义按钮的图标，目前仅支持leeIcon库中的图标 \n
+</view>
+<view class="content">
+3. 可以自定义中间区域的标题栏，可以使用自定义的其他控件或者View来代替 \n
+</view>
+<view class="content">
+4. 回退按钮目前默认调用navigationBack delta:1，在考虑要不要开放出来 自主选择回退方式  \n
+</view>
+<view class="content">
+5. 如果想做贯通式的抬头，可以尝试将背景颜色设置为透明色，ableFloat设置为true，正常页面流中的数据就会从最顶部贯通展示
+</view>
+
+
+

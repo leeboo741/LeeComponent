@@ -32,7 +32,7 @@ Page({
       },
       {
         name: "自定义NavigationBar -- leeNavigationBar",
-        target: ""
+        target: "../navigationBar/navigationBar"
       },
       {
         name: "电话 -- leePhoneCall",

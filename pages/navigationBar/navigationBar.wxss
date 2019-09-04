@@ -1,0 +1,15 @@
+/* pages/navigationBar/navigationBar.wxss */
+
+.navi-title{
+  font-size: 46rpx;
+  color: green;
+  font-weight: bold;
+}
+
+.content{
+  width: 90%;
+  margin: auto;
+  padding: 40rpx;
+  font-size: 28rpx;
+  color: #778899;
+}

@@ -5,7 +5,8 @@
     "pages/showTime/showTime",
     "pages/calendar/calendar",
     "pages/icon/icon",
-    "pages/notice/notice"
+    "pages/notice/notice",
+    "pages/navigationBar/navigationBar"
   ],
   "window": {
     "backgroundTextStyle": "light",

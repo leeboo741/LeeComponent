@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "i-navigation-bar": "/lee-components/leeNavigationBar/index"
+  }
+}
