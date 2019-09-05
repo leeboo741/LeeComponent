@@ -1,4 +1,7 @@
 <!--pages/countDown/countDown.wxml-->
+
+<i-navigation-bar title='倒计时-leeCountDown'>
+</i-navigation-bar>
 <lee-count-down target='{{countDownTarget}}'
                 stopCountDown='{{stopCountDown}}'
                 bind:countdown-end='countDownEnd'

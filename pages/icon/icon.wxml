@@ -1,4 +1,6 @@
 <!--pages/icon/icon.wxml-->
+<i-navigation-bar title='图标-leeIcon'>
+</i-navigation-bar>
 <view class="page">
   <view class="icon-grid"
         wx:for='{{iconData}}'

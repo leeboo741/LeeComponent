@@ -1,2 +1,3 @@
 <!--pages/notice/notice.wxml-->
-<text>pages/notice/notice.wxml</text>
+<i-navigation-bar title='通知|公告-leeNotice'>
+</i-navigation-bar>

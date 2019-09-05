@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "i-navigation-bar": "/lee-components/leeNavigationBar/index"
+  },
   "navigationBarTitleText": "通知 | 公告"
 }

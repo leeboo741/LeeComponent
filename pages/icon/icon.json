@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "i-icon": "/lee-components/leeIcon/index"
+    "i-icon": "/lee-components/leeIcon/index",
+    "i-navigation-bar": "/lee-components/leeNavigationBar/index"
   },
   "navigationBarTitleText": "图标"
 }

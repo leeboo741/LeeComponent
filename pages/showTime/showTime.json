@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "lee-show-time": "/lee-components/leeShowTime/index"
+    "lee-show-time": "/lee-components/leeShowTime/index",
+    "i-navigation-bar": "/lee-components/leeNavigationBar/index"
   },
   "navigationBarTitleText": "时间展示"
 }

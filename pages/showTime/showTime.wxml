@@ -1,4 +1,6 @@
 <!--pages/showTime/showTime.wxml-->
+<i-navigation-bar title='时间展示-leeShowTime'>
+</i-navigation-bar>
 <lee-show-time i-class='show-time-class'
                showType='{{dateFormat}}'
                yearDuration='{{yearDuration}}'

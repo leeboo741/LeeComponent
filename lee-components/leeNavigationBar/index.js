@@ -38,7 +38,7 @@ Component({
     }, // 标题
     titleSize: {
       type: Number,
-      value: 38,
+      value: 32,
     }, // 标题字体
     titleWeight: {
       type: String,

@@ -1,4 +1,7 @@
 <!--index.wxml-->
+<i-navigation-bar title='首页'
+                  showBackButton='{{false}}'>
+</i-navigation-bar>
 <view wx:for="{{dataSource}}"
       wx:for-item='item'
       wx:for-index='index'

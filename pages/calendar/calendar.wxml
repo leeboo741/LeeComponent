@@ -1,4 +1,6 @@
 <!--pages/calendar/calendar.wxml-->
+<i-navigation-bar title='日历-leeCalendar'>
+</i-navigation-bar>
 <i-calendar i-class='calendar'
             lightingDayList='{{lightingDayList}}'
             bind:calendar-tapday='tapCalendarDay'>

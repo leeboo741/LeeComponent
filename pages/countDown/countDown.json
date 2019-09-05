@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "lee-count-down": "/lee-components/leeCountDown/index"
+    "lee-count-down": "/lee-components/leeCountDown/index",
+    "i-navigation-bar": "/lee-components/leeNavigationBar/index"
   },
   "navigationBarTitleText": "倒计时"
 }

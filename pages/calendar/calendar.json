@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "i-calendar": "/lee-components/leeCalendar/index"
+    "i-calendar": "/lee-components/leeCalendar/index",
+    "i-navigation-bar": "/lee-components/leeNavigationBar/index"
   },
   "navigationBarTitleText": "日历"
 }

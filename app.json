@@ -6,13 +6,15 @@
     "pages/calendar/calendar",
     "pages/icon/icon",
     "pages/notice/notice",
-    "pages/navigationBar/navigationBar"
+    "pages/navigationBar/navigationBar",
+    "pages/phoneCallButton/phoneCallButton"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json"
 }

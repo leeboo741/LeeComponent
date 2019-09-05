@@ -36,7 +36,7 @@ Page({
       },
       {
         name: "电话 -- leePhoneCall",
-        target: ""
+        target: "../phoneCallButton/phoneCallButton"
       },
     ],
   },
