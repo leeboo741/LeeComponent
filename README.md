@@ -90,7 +90,7 @@
   > 5. 支持mode lazyload 同 image 标签 mode lazy-load 属性
   > 6. 支持自定义 i-class
   
-  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/navigationBar_1.png)
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/placeholderImage.png)
   
   ### 工具目录
   ##### 时间工具包 TimeUtils
