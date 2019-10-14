@@ -7,5 +7,14 @@
          wx:for-index='imageIndex'
          wx:key="{{imageIndex}}"
          placeholderSrc='../../resource/placeholderImage.png'
+         failSrc='../../resource/loadFailImage.png'
+         imageSrc='{{imageItem}}'>
+</i-image>
+<i-image i-class="image"
+         wx:for="{{imageSrc}}"
+         wx:for-item="imageItem"
+         wx:for-index='imageIndex'
+         wx:key="{{imageIndex}}"
+         placeholderSrc='../../resource/placeholderImage.png'
          imageSrc='{{imageItem}}'>
 </i-image>

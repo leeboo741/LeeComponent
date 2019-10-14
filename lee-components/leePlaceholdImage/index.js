@@ -4,11 +4,20 @@
 /** ============================ 带 占位图 的 image 组件 ============================== */
 /**                                                                        */
 /** ====================================================================== */
+
+const Load_State_Before = 0;
+const Load_State_Success = 1;
+const Load_State_Fail = 2;
+
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
+    failSrc: {
+      type: String,
+      value: null,
+    },
     placeholderSrc: {
       type: String,
       value: null,
@@ -31,7 +40,7 @@ Component({
    * 组件的初始数据 内部属性
    */
   data: {
-    loadedImage: false,
+    loadState: Load_State_Before,
   },
 
   /**
@@ -55,13 +64,13 @@ Component({
     // 图片加载错误
     loadError: function () {
       this.setData({
-        loadedImage: false,
+        loadState: Load_State_Fail,
       })
     },
     // 图片加载成功
     load: function () {
       this.setData({
-        loadedImage: true,
+        loadState: Load_State_Success,
       })
     }
   },

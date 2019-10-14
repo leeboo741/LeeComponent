@@ -7,9 +7,7 @@ Page({
   data: {
     imageSrc: [
       "https://petimg.tyferp.com/weapp/banner01.jpg",
-      "https://petimg.tyferp.com/weapp/banner02.jpg",
-      "https://petimg.tyferp.com/weapp/banner03.jpg",
-      "http://192.168.3.111:8080/resource/1.jpg",
+      "http://192.168.3.111:8080/resource/1.jpg"
     ]
   },
 
