@@ -77,6 +77,21 @@
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/navigationBar_1.png)
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/navigationBar_2.png)
   
+  ##### 带placeholder的image LeePlaceholdImage
+ * 时间
+  2019/10/14
+ * 状态
+  完成
+ * 功能
+  > 1. 加载前显示占位图 placeholderSrc
+  > 2. 加载后显示图片 imageSrc
+  > 3. 加载失败显示失败图 failSrc
+  > 4. 没有失败图显示占位图
+  > 5. 支持mode lazyload 同 image 标签 mode lazy-load 属性
+  > 6. 支持自定义 i-class
+  
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/navigationBar_1.png)
+  
   ### 工具目录
   ##### 时间工具包 TimeUtils
   > 1. getDate() 
