@@ -1,0 +1,11 @@
+<!--pages/placeholdImage/placeholdImage.wxml-->
+<i-navigation-bar title='带占位图Image -- leePlaceholdImage'>
+</i-navigation-bar>
+<i-image i-class="image"
+         wx:for="{{imageSrc}}"
+         wx:for-item="imageItem"
+         wx:for-index='imageIndex'
+         wx:key="{{imageIndex}}"
+         placeholderSrc='../../resource/placeholderImage.png'
+         imageSrc='{{imageItem}}'>
+</i-image>

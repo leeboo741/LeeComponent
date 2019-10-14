@@ -1,0 +1,16 @@
+<!--lee-components/leePlaceholdImage/index.wxml-->
+<image class="i-class"
+       src='{{imageSrc}}'
+       mode="{{mode}}"
+       lazy-load="{{lazyLoad}}"
+       hidden="{{!loadedImage}}"
+       binderror="loadError"
+       bindload="load">
+</image>
+
+<image class="i-class"
+       src='{{placeholderSrc}}'
+       mode="{{mode}}"
+       lazy-load="{{lazyLoad}}"
+       wx:if="{{!loadedImage}}">
+</image>

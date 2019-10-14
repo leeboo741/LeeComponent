@@ -7,7 +7,8 @@
     "pages/icon/icon",
     "pages/notice/notice",
     "pages/navigationBar/navigationBar",
-    "pages/phoneCallButton/phoneCallButton"
+    "pages/phoneCallButton/phoneCallButton",
+    "pages/placeholdImage/placeholdImage"
   ],
   "window": {
     "backgroundTextStyle": "light",

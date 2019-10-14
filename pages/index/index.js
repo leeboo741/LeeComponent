@@ -38,6 +38,10 @@ Page({
         name: "电话 -- leePhoneCall",
         target: "../phoneCallButton/phoneCallButton"
       },
+      {
+        name: "带占位图Image -- leePlaceholdImage",
+        target: "../placeholdImage/placeholdImage"
+      }
     ],
   },
   

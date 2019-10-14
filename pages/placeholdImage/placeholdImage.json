@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-navigation-bar": "/lee-components/leeNavigationBar/index",
+    "i-image": "/lee-components/leePlaceholdImage/index"
+  }
+}
