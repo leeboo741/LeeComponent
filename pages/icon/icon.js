@@ -747,6 +747,27 @@ Page({
         "iconSelectedColor": "#ee2c2c",
         "iconSelected": false,
       },
+      {
+        "iconType": "left-arrow-circle",
+        "iconSize": 50,
+        "iconNormalColor": "#778899",
+        "iconSelectedColor": "#ee2c2c",
+        "iconSelected": false,
+      },
+      {
+        "iconType": "right-arrow-circle",
+        "iconSize": 50,
+        "iconNormalColor": "#778899",
+        "iconSelectedColor": "#ee2c2c",
+        "iconSelected": false,
+      },
+      {
+        "iconType": "bone",
+        "iconSize": 50,
+        "iconNormalColor": "#778899",
+        "iconSelectedColor": "#ee2c2c",
+        "iconSelected": false,
+      },
     ],
   },
 })
