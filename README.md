@@ -92,6 +92,16 @@
   
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/placeholderImage.png)
   
+  ##### 加载更多时底部item LeeLoadFootItem 
+ * 时间
+  2019/10/16
+ * 状态
+  完成
+ * 功能
+  > 1. 传入loadState控制状态
+  
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/placeholderImage.png)
+  
   ### 工具目录
   ##### 时间工具包 TimeUtils
   > 1. getDate() 
