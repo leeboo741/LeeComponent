@@ -55,7 +55,7 @@
  * 状态
   完成
  * 功能
-  > 1. 内置96个iconfont上的图标（具体请查看demo）
+  > 1. 内置105个iconfont上的图标（具体请查看demo）
   > 2. type 样式 size 大小 color 颜色
   > 3. 接受外部样式（"i-class"）
   > 4. 接受自定义图标（"custome"）
