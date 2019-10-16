@@ -100,7 +100,7 @@
  * 功能
   > 1. 传入loadState控制状态
   
-  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/placeholderImage.png)
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/loadFootItem.gif)
   
   ### 工具目录
   ##### 时间工具包 TimeUtils
