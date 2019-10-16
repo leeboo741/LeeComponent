@@ -10,7 +10,8 @@
         bindtap="tapIcon"
         data-index='{{iconIndex}}'>
     <view class="icon-item">
-      <i-icon type="{{iconItem.iconType}}"
+      <i-icon i-class='{{parse.getIconClass(iconItem)}}'
+              type="{{iconItem.iconType}}"
               size='{{iconItem.iconSize}}'
               color="{{parse.getColor(iconItem)}}">
       </i-icon>
@@ -29,6 +30,12 @@
       } else {
         return iconItem.iconNormalColor;
       }
+    },
+    getIconClass: function(iconItem) {
+      if (iconItem.iconType == "loading-1" || iconItem.iconType == "loading-2" || iconItem.iconType == "loading-3") {
+        return "rotate-icon";
+      }
+      return "";
     }
   }
 </wxs>

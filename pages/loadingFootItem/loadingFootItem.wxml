@@ -1,0 +1,12 @@
+<!--pages/loadingFootItem/loadingFootItem.wxml-->
+<i-navigation-bar title='leeLoadingFootItem'>
+</i-navigation-bar>
+
+<i-loading-foot loadState='{{loadState}}'>
+
+</i-loading-foot>
+
+<button class="button"
+        bindtap="tapChange">
+更改
+</button>

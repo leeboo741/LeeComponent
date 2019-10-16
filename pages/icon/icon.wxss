@@ -30,3 +30,13 @@
   margin-top: 20rpx;
   font-size: 28rpx;
 }
+
+.rotate-icon {
+  animation: iconRotate 3s linear infinite;
+}
+
+@keyframes iconRotate{
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}

@@ -41,7 +41,12 @@ Page({
       {
         name: "带占位图Image -- leePlaceholdImage",
         target: "../placeholdImage/placeholdImage"
-      }
+      },
+      {
+        name: "loadmore底部item -- leeLoadingFootItem",
+        target: "../loadingFootItem/loadingFootItem"
+      },
+
     ],
   },
   
