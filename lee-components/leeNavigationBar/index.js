@@ -180,6 +180,13 @@ Component({
     let naviHeightWithoutStatusbar = menuHeight + (naviTopPadding * 2); // 导航除去statusBar的高度
     let pageHeight = windowHeight - naviHeight; // 屏幕除去navigationBar的高度
 
+    // app Data
+    app.globalData.pageHeight = pageHeight;
+    app.globalData.naviHeight = naviHeight;
+    app.globalData.naviHeightWithoutStatusbar = naviHeightWithoutStatusbar;
+    app.globalData.windowWidth = windowWidth;
+    app.globalData.windowHeight = windowHeight;
+
     this.setData({
       naviHeight: naviHeight,
       naviHeightWithoutStatusbar: naviHeightWithoutStatusbar,
