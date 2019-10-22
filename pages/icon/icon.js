@@ -831,6 +831,27 @@ Page({
         "iconSelectedColor": "#ee2c2c",
         "iconSelected": false,
       },
+      {
+        "iconType": "zhifubao",
+        "iconSize": 50,
+        "iconNormalColor": "#778899",
+        "iconSelectedColor": "#ee2c2c",
+        "iconSelected": false,
+      },
+      {
+        "iconType": "weixinzhifu",
+        "iconSize": 50,
+        "iconNormalColor": "#778899",
+        "iconSelectedColor": "#ee2c2c",
+        "iconSelected": false,
+      },
+      {
+        "iconType": "point",
+        "iconSize": 50,
+        "iconNormalColor": "#778899",
+        "iconSelectedColor": "#ee2c2c",
+        "iconSelected": false,
+      },
     ],
   },
 })
