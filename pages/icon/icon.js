@@ -810,6 +810,27 @@ Page({
         "iconSelectedColor": "#ee2c2c",
         "iconSelected": false,
       },
+      {
+        "iconType": "selected",
+        "iconSize": 50,
+        "iconNormalColor": "#778899",
+        "iconSelectedColor": "#ee2c2c",
+        "iconSelected": false,
+      },
+      {
+        "iconType": "unselected",
+        "iconSize": 50,
+        "iconNormalColor": "#778899",
+        "iconSelectedColor": "#ee2c2c",
+        "iconSelected": false,
+      },
+      {
+        "iconType": "red-pack",
+        "iconSize": 50,
+        "iconNormalColor": "#778899",
+        "iconSelectedColor": "#ee2c2c",
+        "iconSelected": false,
+      },
     ],
   },
 })
