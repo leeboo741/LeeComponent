@@ -9,7 +9,8 @@
     "pages/navigationBar/navigationBar",
     "pages/phoneCallButton/phoneCallButton",
     "pages/placeholdImage/placeholdImage",
-    "pages/loadingFootItem/loadingFootItem"
+    "pages/loadingFootItem/loadingFootItem",
+    "pages/progress/progress"
   ],
   "window": {
     "backgroundTextStyle": "light",

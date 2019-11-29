@@ -1,0 +1,99 @@
+<!--pages/progress/progress.wxml-->
+<i-navigation-bar title='进度条--leeProgress'>
+</i-navigation-bar>
+
+<view class="progress-item">
+  <i-progress i-class='progress' percent="25" status="custom" progressColor="#1c2438">
+    <view slot='progress-header' style='padding: 10rpx;'>
+    custom
+    </view>
+  </i-progress>
+  <i-progress i-class='progress' percent="45" status="normal">
+    <view slot='progress-header' style='padding: 10rpx;'>
+    normal
+    </view>
+  </i-progress>
+  <i-progress i-class='progress' percent="65" status="wrong">
+    <view slot='progress-header' style='padding: 10rpx;'>
+    wrong
+    </view>
+  </i-progress>
+  <i-progress i-class='progress' percent="85" status="error">
+    <view slot='progress-header' style='padding: 10rpx;'>
+    error
+    </view>
+  </i-progress>
+  <i-progress i-class='progress' percent="100" status="success">
+    <view slot='progress-header' style='padding: 10rpx;'>
+    success
+    </view>
+  </i-progress>
+</view>
+
+<view class="progress-item">
+  <i-progress i-class='progress' percent="25" status="custom" progressColor="#1c2438">
+    <view slot='progress-header' style='padding: 10rpx;'>
+    header
+    </view>
+  </i-progress>
+  <i-progress i-class='progress' percent="45" status="normal">
+    <view slot='progress-center-left' style='padding: 10rpx;'>
+    left
+    </view>
+  </i-progress>
+  <i-progress i-class='progress' percent="65" status="wrong" strokWidth="40">
+    <view slot='progress-center-center' style='width:100%; text-align:center; font-size:28rpx; color:white; vertical-align:middle;'>
+    center
+    </view>
+  </i-progress>
+  <i-progress i-class='progress' percent="85" status="error">
+    <view slot='progress-center-right' style='padding: 10rpx;'>
+    right
+    </view>
+  </i-progress>
+  <i-progress i-class='progress' percent="100" status="success">
+    <view slot='progress-footer' style='padding: 10rpx;'>
+    footer
+    </view>
+  </i-progress>
+</view>
+
+<view class="progress-item">
+  <i-progress i-class='progress' percent="25" status="custom" progressColor="#1c2438" ableActive='{{true}}'>
+  </i-progress>
+  <i-progress i-class='progress' percent="45" status="normal" ableActive='{{true}}'>
+  </i-progress>
+  <i-progress i-class='progress' percent="65" status="wrong" ableActive='{{true}}'>
+  </i-progress>
+  <i-progress i-class='progress' percent="85" status="error" ableActive='{{true}}'>
+  </i-progress>
+  <i-progress i-class='progress' percent="100" status="success" ableActive='{{true}}'>
+  </i-progress>
+</view>
+
+
+<view class="progress-item">
+  <i-progress i-class='progress' percent="25" status="custom" progressColor="#1c2438" showInfoStatus='left'>
+  </i-progress>
+  <i-progress i-class='progress' percent="45" status="normal" showInfoStatus='left'>
+  </i-progress>
+  <i-progress i-class='progress' percent="65" status="wrong" showInfoStatus='left'>
+  </i-progress>
+  <i-progress i-class='progress' percent="85" status="error" showInfoStatus='left'>
+  </i-progress>
+  <i-progress i-class='progress' percent="100" status="success" showInfoStatus='left'>
+  </i-progress>
+</view>
+
+<view class="progress-item">
+  <i-progress i-class='progress' percent="25" status="custom" progressColor="#1c2438" showInfoStatus='right'>
+  </i-progress>
+  <i-progress i-class='progress' percent="45" status="normal" showInfoStatus='right'>
+  </i-progress>
+  <i-progress i-class='progress' percent="65" status="wrong" showInfoStatus='right'>
+  </i-progress>
+  <i-progress i-class='progress' percent="85" status="error" showInfoStatus='right'>
+  </i-progress>
+  <i-progress i-class='progress' percent="100" status="success" showInfoStatus='right'>
+  </i-progress>
+</view>
