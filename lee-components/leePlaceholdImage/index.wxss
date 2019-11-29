@@ -4,3 +4,29 @@
   height: 0rpx;
   opacity: 0;
 }
+
+.image-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placehold-image{
+  max-width: 80rpx;
+  max-height: 80rpx;
+}
+
+.fail-image{
+  max-width: 80rpx;
+  max-height: 80rpx;
+}
+
+@keyframes iconRotate{
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+
+.loading-icon{
+  animation: iconRotate 3s linear infinite;
+}

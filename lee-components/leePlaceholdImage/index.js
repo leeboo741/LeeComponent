@@ -16,11 +16,11 @@ Component({
   properties: {
     failSrc: {
       type: String,
-      value: null,
+      value: "../leePlaceholdImage/image_load_fail.png",
     },
     placeholderSrc: {
       type: String,
-      value: null,
+      value: "../leePlaceholdImage/image_loading.png",
     }, // 占位图地址
     imageSrc: {
       type: String,
@@ -34,6 +34,7 @@ Component({
       type: Boolean,
       value: true
     }, // 懒加载
+    
   },
 
   /**

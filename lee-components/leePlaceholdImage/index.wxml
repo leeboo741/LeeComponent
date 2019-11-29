@@ -8,19 +8,24 @@
        bindload="load">
 </image>
 
-<image class="i-class placehold-image"
-       src='{{placeholderSrc}}'
-       mode="{{mode}}"
-       lazy-load="{{lazyLoad}}"
-       wx:if="{{parse.showPlaceholderImage(loadState)}}">
-</image>
+<view class="i-class image-box"
+      wx:if="{{parse.showPlaceholderImage(loadState)}}">
+  <image class="placehold-image loading-icon"
+         src='{{placeholderSrc}}'
+         mode="aspectFit"
+         lazy-load="{{lazyLoad}}">
+  </image>
+</view>
 
-<image class="i-class fail-image"
-       src='{{parse.getFailSrc(failSrc, placeholderSrc)}}'
-       mode="{{mode}}"
-       lazy-load="{{lazyLoad}}"
-       wx:if="{{parse.showFailImage(loadState,failSrc)}}">
-</image>
+
+<view class="i-class image-box"
+      wx:if="{{parse.showFailImage(loadState,failSrc)}}">
+  <image class="fail-image"
+         src='{{parse.getFailSrc(failSrc, placeholderSrc)}}'
+         mode="aspectFit"
+         lazy-load="{{lazyLoad}}">
+  </image>
+</view>
 
 <wxs module='parse'>
   module.exports={

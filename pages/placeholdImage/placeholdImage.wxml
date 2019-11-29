@@ -15,6 +15,5 @@
          wx:for-item="imageItem"
          wx:for-index='imageIndex'
          wx:key="{{imageIndex}}"
-         placeholderSrc='../../resource/placeholderImage.png'
          imageSrc='{{imageItem}}'>
 </i-image>
