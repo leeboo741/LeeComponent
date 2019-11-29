@@ -1,0 +1,41 @@
+<!--lee-components/leeImageUpload/index.wxml-->
+<view class="i-class upload-image">
+  <view class="upload-image-box">
+    <view class="upload-image-item"
+          wx:for='{{uploadImagePathList}}'
+          wx:for-item='uploadImageItem'
+          wx:for-index='uploadImageIndex'
+          wx:key='{{uploadImageIndex}}'>
+      <i-image imageSrc='{{uploadImageItem}}'
+               i-class='upload-image-item-image'>
+      </i-image>
+      <view class="progress-box"
+            hidden="{{!parse.showProgress(uploadImageProgress, currentUploadIndex, uploadImageIndex)}}">
+        <i-progress percent="{{uploadImageProgress}}" ableActive='{{true}}' style="width: 100%;">
+        </i-progress>
+      </view>
+    </view>
+    <view class="upload-image-item">
+      <view class='upload-image-item-image'
+            catchtap="tapAddNewUploadImage">
+        <i-image i-class="upload-image-item-center"
+                 imageSrc='../leeImageUpload/add_new.png'>
+        </i-image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<wxs module='parse'>
+  module.exports={
+    showProgress: function(progressValue, currentIndex, index) {
+      if (currentIndex != index) {
+        return false;
+      }
+      if (progressValue < 0 || progressValue >= 100 ) {
+        return false;
+      }
+      return true;
+    },
+  }
+</wxs>

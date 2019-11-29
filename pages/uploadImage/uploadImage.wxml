@@ -1,0 +1,7 @@
+<!--pages/uploadImage/uploadImage.wxml-->
+<i-navigation-bar title='图片上传--leeImageUpload'>
+</i-navigation-bar>
+
+<i-image-upload>
+
+</i-image-upload>

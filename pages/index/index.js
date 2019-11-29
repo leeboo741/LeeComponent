@@ -50,6 +50,10 @@ Page({
         name: "进度条 -- leeProgress",
         target: "/pages/progress/progress"
       },
+      {
+        name: "图片上传 -- leeImageUpload",
+        target: "/pages/uploadImage/uploadImage",
+      }
     ],
   },
   

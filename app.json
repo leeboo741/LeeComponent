@@ -10,7 +10,8 @@
     "pages/phoneCallButton/phoneCallButton",
     "pages/placeholdImage/placeholdImage",
     "pages/loadingFootItem/loadingFootItem",
-    "pages/progress/progress"
+    "pages/progress/progress",
+    "pages/uploadImage/uploadImage"
   ],
   "window": {
     "backgroundTextStyle": "light",
