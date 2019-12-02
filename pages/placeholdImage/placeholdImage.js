@@ -6,7 +6,7 @@ Page({
    */
   data: {
     imageSrc: [
-      "https://petimg.tyferp.com/weapp/banner01.jpg",
+      "https://img.taochonghui.com/weapp/banner01.jpg",
       "http://192.168.3.111:8080/resource/1.jpg"
     ]
   },

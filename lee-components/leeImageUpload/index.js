@@ -253,9 +253,6 @@ Component({
             startUpload: false,
           })
           that.cancelUpload();
-          // if (uploadCompleteCallback != null && typeof uploadCompleteCallback == "function") {
-          //   uploadCompleteCallback();
-          // }
           that.uploadComplete();
         } else {
           // 下标 没有超出 继续上传下一张图片
@@ -281,9 +278,6 @@ Component({
             startUpload: false,
           })
           that.cancelUpload();
-          // if (uploadCompleteCallback != null && typeof uploadCompleteCallback == "function") {
-          //   uploadCompleteCallback();
-          // }
           that.uploadComplete();
         } else {
           that.setData({
