@@ -6,6 +6,11 @@
 <i-image-upload uploadUrl='http://192.168.3.103:5050/file/upload'
                 name='multipartFile'
                 bind:upload-complete='uploadComplete'
-                ableDelete='{{false}}'>
+                ableDelete='{{false}}'
+                startUpload='{{false}}'
+                autoUpload='{{true}}'
+                selectImageMode='cover'
+                maxImageCount='{{9}}'
+                formData='{{}}'>
 
 </i-image-upload>

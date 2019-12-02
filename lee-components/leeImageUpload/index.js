@@ -37,7 +37,7 @@ Component({
     }, // 最大上传图片数量 默认为 9
     selectImageMode: {
       type: String,
-      value: "append", 
+      value: "cover", 
     }, // 选择图片模式 cover 覆盖已选 | append 增量选择  权限高于abelDelete 当值为append时 ableDelete必然为true 不接受更改
     ableDelete: {
       type: Boolean,
@@ -45,7 +45,7 @@ Component({
     }, // 是否允许删除图片 true 展示 删除按钮 允许删除已经添加的图片 false 隐藏删除按钮  
     autoUpload: {
       type: Boolean,
-      value: true,
+      value: false,
     }, // 是否允许自动上传 true 添加图片自动上传 false 添加图片后 需要手动 更改 startUpload 为 true 开始上传
     startUpload: {
       type: Boolean,
