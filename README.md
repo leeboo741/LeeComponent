@@ -102,6 +102,20 @@
   
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/loadFootItem.gif)
   
+  ##### 加载进度条 LeeProgress 
+ * 时间
+  2019/11/28
+ * 状态
+  完成
+ * 功能
+  > 1. 四种样式 custom 自定义 | normal 正常 | success 成功 | wrong 警告 | error 错误 custom 接受自定义颜色
+  > 2. ableActive 定义是否有动画效果
+  > 3. showInfoStatus 默认展示进度数值
+  > 4. 允许自定义子页面 header footer left right center  其中right left 和 showInfoStatus 冲突 showInfoStatus 展示权限更高
+  
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/progress(1).jpg)
+  ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/progress(2).jpg)
+  
   ### 工具目录
   ##### 时间工具包 TimeUtils
   > 1. getDate() 
