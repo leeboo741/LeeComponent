@@ -51,7 +51,7 @@ Page({
         target: "/pages/progress/progress"
       },
       {
-        name: "图片上传 -- leeImageUpload",
+        name: "图片选择和上传 -- leeImageUpload",
         target: "/pages/uploadImage/uploadImage",
       }
     ],

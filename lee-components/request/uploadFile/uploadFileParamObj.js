@@ -6,7 +6,7 @@ var UploadFileParamObj = function UploadFileParamObj(obj) {
   this.url = ""; // 请求地址
   this.filePath = ""; // 文件路径
   this.name = ""; // 名称
-  this.header = {}; // 请求头
+  this.header = { "Content-Type": "multipart/form-data" }; // 请求头
   this.formData = {}; // 附加信息
   this.success = null; // 请求成功回调
   this.fail = null; // 请求失败回调
@@ -25,6 +25,9 @@ var UploadFileParamObj = function UploadFileParamObj(obj) {
     }
     if (obj.header != null && typeof obj.header == "object") {
       this.header = obj.header;
+      if (this.header["Content-Type"]==null) {
+        this.header["Content-Type"] = "multipart/form-data";
+      }
     }
     if (obj.formData != null && typeof obj.formData == "object") {
       this.formData = obj.formData;

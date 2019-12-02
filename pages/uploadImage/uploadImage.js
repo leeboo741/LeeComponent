@@ -62,5 +62,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 上传完成
+   */
+  uploadComplete: function(e) {
+    console.log("上传图片组件 上传完成 \n" +JSON.stringify(e));
   }
 })

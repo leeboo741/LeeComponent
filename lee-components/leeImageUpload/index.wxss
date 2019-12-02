@@ -3,6 +3,7 @@
 .upload-image{
   display: flex;
   flex-direction: column;
+  margin: 20rpx;
 }
 
 .upload-image-box{
@@ -16,6 +17,24 @@
   width: 33.3333333%;
   height: 250rpx;
   position: relative;
+}
+
+.delete-box{
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-image{
+  width: 40rpx;
+  height: 40rpx;
+  background: white;
+  border-radius: 20rpx;
 }
 
 .progress-box{

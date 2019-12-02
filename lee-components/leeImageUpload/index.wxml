@@ -14,8 +14,18 @@
         <i-progress percent="{{uploadImageProgress}}" ableActive='{{true}}' style="width: 100%;">
         </i-progress>
       </view>
+      <view class="delete-box"
+            wx:if='{{ableDelete}}'
+            catchtap="deleteImageAction"
+            data-index='{{uploadImageIndex}}'
+            data-imagepath='{{uploadImageItem}}'>
+        <i-image imageSrc='../leeImageUpload/delete.png'
+                 i-class='delete-image'>
+        </i-image>
+      </view>
     </view>
-    <view class="upload-image-item">
+    <view class="upload-image-item"
+          hidden="{{selectImageMode=='append'&&uploadImagePathList.length>=maxImageCount}}">
       <view class='upload-image-item-image'
             catchtap="tapAddNewUploadImage">
         <i-image i-class="upload-image-item-center"
