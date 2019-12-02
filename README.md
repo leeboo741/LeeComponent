@@ -2,7 +2,7 @@
  微信小程序 组件库 lee-components 导入项目使用
  
  ### 目的
- 1. 学习And练习微信小程序组件开发
+ 1. 学习&练习微信小程序组件开发
  2. 解决日常开发中没有合用组件的问题
  3. 重新整理之前的一些微信小程序代码，减少代码冗余
  
@@ -136,6 +136,17 @@
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/imageUpload(2).jpg)
   
   ### 工具目录
+  ##### 网络请求工具 request
+  > 发起请求工具包 POST PUT GET DELETE 和 文件上传 UploadFile
+  >> 1. 调用 RequestUtil 接收 RequestParamObj 或者 UploadFileParamObj 对象，
+  >> 2. RequestUtil 根据 RequestParamObj 中参数 调用 wx.request 或者 wx.uploadFile 发起对应的GET,POST,PUT,DELETE,UPLOAD请求
+  >> 3. wx.request 或者 wx.uploadFile 接口调用成功返回中（success）和 失败返回中（fail）， 将数据提交给 ResponseHandler 进行处理
+  >> 4. ResponseHandler 剥离 成功数据 和 失败数据，并对失败数据进行 弹窗展示操作，将成功数据返回给 RequestUtil
+  >> 5. RequestUtil 通过 RequestParamObj 中的 回调函数， 将成功结果 和失败结果 返还给调用方 
+  >> 6. 使用时 请先根据自己业务需要和数据结构 修改 
+  >>> 1. ResponseHandler 中的处理逻辑 ， 
+  >>> 2. RequestSuccessObj RequestFailObj 对象属性 ， 
+  >>> 3. ResponseCodeEnum 中的 状态码
   ##### 时间工具包 TimeUtils
   > 1. getDate() 
   >> 传入 目标时间 相差的年 月 日 时 分 秒 周 获取 结果日期
