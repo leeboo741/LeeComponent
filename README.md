@@ -120,17 +120,20 @@
  * 时间
   2019/11/28
  * 状态
-  待完成
- * 待完成项
-  > 1. 视频的选择和上传
+  完成
  * 功能
   > 1. 图片的选择和上传
   > 2. 传入 uploadUrl name formData 上传图片信息  可能需要微调 具体请查看代码内部注释
-  > 3. 允许选择图片选择模式 selectImageMode 是覆盖选择 还是增量选择 cover append
+  > 3. 允许选择图片选择模式 selectMode 是覆盖选择 还是增量选择 cover append
   > 4. 是否展示删除按钮 ableDelete 权限和 selectImageMode append 冲突 已append 为主
   > 5. autoUpload 是否开启自动上传 为true 时  图片选择完成后 自动开始上传操作
   > 6. startUpload 图片上传开关 手动开启图片上传时 请传入true, 传入false 时 停止上传
   > 7. maxImageCount 最大图片选择数量
+  > 8. 视频的选择和上传
+  > 9. 图片和视频的来源限制
+  > 10. 视频时间长度限制
+  > 11. 仅展示模式
+  > 12. 可接受外部图片和视频地址列表数据
   
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/imageUpload(1).jpg)
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/imageUpload(2).jpg)
@@ -147,6 +150,9 @@
   >>> 1. ResponseHandler 中的处理逻辑 ， 
   >>> 2. RequestSuccessObj RequestFailObj 对象属性 ， 
   >>> 3. ResponseCodeEnum 中的 状态码
+  ##### 工具包 Utils
+  > 1. 一些校验工具 （为空，手机号，function，object, string, number ....）
+  > 2. 特殊字符的转码
   ##### 时间工具包 TimeUtils
   > 1. getDate() 
   >> 传入 目标时间 相差的年 月 日 时 分 秒 周 获取 结果日期
