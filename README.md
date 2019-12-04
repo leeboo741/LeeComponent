@@ -134,6 +134,7 @@
   > 10. 视频时间长度限制
   > 11. 仅展示模式
   > 12. 可接受外部图片和视频地址列表数据
+  > 13. 图片查看大图，视频全屏播放
   
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/imageUpload(1).jpg)
   ![demo截图](https://github.com/leeboo741/ImageRepository/blob/master/WXLeeComponent/imageUpload(2).jpg)
