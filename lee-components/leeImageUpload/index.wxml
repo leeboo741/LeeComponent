@@ -2,16 +2,33 @@
 <view class="i-class upload-image">
   <view class="upload-image-box">
     <view class="upload-image-item"
-          wx:for='{{uploadImagePathList}}'
+          wx:for='{{imagePathList}}'
           wx:for-item='uploadImageItem'
           wx:for-index='uploadImageIndex'
           wx:key='{{uploadImageIndex}}'>
-      <i-image imageSrc='{{uploadImageItem}}'
-               i-class='upload-image-item-image'>
+      <i-image wx:if='{{!parse.isVideo(uploadImageItem)}}'
+               imageSrc='{{uploadImageItem}}'
+               i-class='upload-image-item-image'
+               catchtap="tapImageItem"
+               data-index='{{uploadImageIndex}}'
+               data-src='{{uploadImageItem}}'>
       </i-image>
+      <block wx:else>
+        <video class='upload-image-item-image'
+               src="{{uploadImageItem}}"
+               id='{{uploadImageItem}}'
+               bindended='playEnd'>
+        </video>
+        <view class="video-tap-box"
+              catchtap="tapVideoItem"
+              data-index='{{uploadImageIndex}}'
+              data-src='{{uploadImageItem}}'
+              data-id='{{uploadImageItem}}'>
+        </view>
+      </block>
       <view class="progress-box"
             hidden="{{!parse.showProgress(uploadImageProgress, currentUploadIndex, uploadImageIndex)}}">
-        <i-progress percent="{{uploadImageProgress}}" ableActive='{{true}}' style="width: 100%;">
+        <i-progress percent="{{uploadImageProgress}}" ableActive='{{true}}' style="width: 90%;" strokWidth='15'>
         </i-progress>
       </view>
       <view class="delete-box"
@@ -25,9 +42,10 @@
       </view>
     </view>
     <view class="upload-image-item"
-          hidden="{{selectImageMode=='append'&&uploadImagePathList.length>=maxImageCount}}">
-      <view class='upload-image-item-image'
-            catchtap="tapAddNewUploadImage">
+          wx:if='{{showAddNewButton}}'
+          hidden="{{selectMode=='append'&&imagePathList.length>=maxImageCount}}"
+          catchtap="tapAddNewUploadImage">
+      <view class='upload-image-item-image'>
         <i-image i-class="upload-image-item-center"
                  imageSrc='../leeImageUpload/add_new.png'>
         </i-image>
@@ -47,5 +65,22 @@
       }
       return true;
     },
+    isVideo: function(path) {
+      var index = path.lastIndexOf(".");
+      var suffix = path.substring(index + 1);
+      if (suffix == "mp4" ||
+        suffix == "mov" ||
+        suffix == "m4v" ||
+        suffix == "3gp" ||
+        suffix == "avi" ||
+        suffix == "m3u8" ||
+        suffix == "webm") {
+        return true;
+      }
+      return false;
+    },
+    getVideoId: function(path) {
+      return path;
+    }
   }
 </wxs>

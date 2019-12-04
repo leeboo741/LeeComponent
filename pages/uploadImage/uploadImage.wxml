@@ -5,12 +5,27 @@
 <!-- 另外如果要使用上传功能 关注一下 组件里面有些东西要自己去调整一下 例如返回值之类的，要不然你外面接受到的就不一定是什么东西了 -->
 <i-image-upload uploadUrl='http://192.168.3.103:5050/file/upload'
                 name='multipartFile'
-                bind:upload-complete='uploadComplete'
-                ableDelete='{{false}}'
+                formData='{{}}'
                 startUpload='{{false}}'
                 autoUpload='{{true}}'
-                selectImageMode='cover'
+                bind:upload-complete='uploadComplete'
+                ableDelete='{{true}}'
+                selectMode='append'
                 maxImageCount='{{9}}'
-                formData='{{}}'>
+                videoMaxLength='{{10}}'
+                imageSourceType="{{['album', 'camera']}}"
+                videoSourceType="{{['album', 'camera']}}"
+                imagePathList='{{}}'
+                showAddNewButton='{{true}}'>
 
 </i-image-upload>
+
+
+<i-image-upload ableDelete='{{false}}'
+                startUpload='{{false}}'
+                autoUpload='{{false}}'
+                imagePathList='{{imageList}}'
+                showAddNewButton='{{false}}'>
+
+</i-image-upload>
+

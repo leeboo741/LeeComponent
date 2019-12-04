@@ -8,8 +8,11 @@
 /** ====================================================================== */
 
 const DEFAULT_MAX_IMAGE_COUNT = 9;
+const DEFAULT_MAX_VIDEO_LENGTH = 0;
 
 const UploadFileService = require("../request/uploadFile/uploadFileService.js");
+
+const Utils = require("../utils/utils.js");
 
 Component({
   /** ==================================================== */
@@ -35,7 +38,7 @@ Component({
       type: Number,
       value: DEFAULT_MAX_IMAGE_COUNT,
     }, // 最大上传图片数量 默认为 9
-    selectImageMode: {
+    selectMode: {
       type: String,
       value: "cover", 
     }, // 选择图片模式 cover 覆盖已选 | append 增量选择  权限高于abelDelete 当值为append时 ableDelete必然为true 不接受更改
@@ -51,14 +54,32 @@ Component({
       type: Boolean,
       value: false,
     }, // 上传开关 true 开始上传 false 取消上传
-
+    videoMaxLength: {
+      type: Number,
+      value: DEFAULT_MAX_VIDEO_LENGTH,
+    }, // 视频时间最大长度 小于等于0时 不做时间长度限制
+    imageSourceType: {
+      type: Array,
+      value: ['album', 'camera'],
+    }, // 图片来源
+    videoSourceType: {
+      type: Array,
+      value: ['album', 'camera'],
+    }, // 视频来源
+    imagePathList: {
+      type: Array,
+      value: [],
+    }, // 要上传的图片地址列表
+    showAddNewButton: {
+      type: Boolean,
+      value: true,
+    }, // 是否展示 加新 按钮
   },
 
   /**
    * 组件的初始数据 内部属性
    */
   data: {
-    uploadImagePathList: [], // 要上传的图片地址列表
     serviceImagePathList: [], // 上传完成后返回的服务器地址列表
     uploadImageTask: null, // 上传图片任务
     uploadImageProgress: -1, // 当前上传图片进度
@@ -77,15 +98,15 @@ Component({
         this.cancelUpload();
       }
     },
-    "selectImageMode": function (selectImageMode) {
-      if (selectImageMode == "append") {
+    "selectMode": function (selectMode) {
+      if (selectMode == "append") {
         this.setData({
           ableDelete: true
         })
       }
     },
     "ableDelete": function (ableDelete) {
-      if (this.data.selectImageMode == "append" && this.data.ableDelete == false) {
+      if (this.data.selectMode == "append" && this.data.ableDelete == false) {
         this.setData({
           ableDelete: true
         })
@@ -107,6 +128,40 @@ Component({
    */
   methods: {
     /**
+     * 点击预览图片
+     */
+    tapImageItem: function (e) {
+      let tempPreviewImageList = [];
+      for (let i = 0; i < this.data.imagePathList.length; i++) {
+        let tempImagePath = this.data.imagePathList[i];
+        if (!Utils.checkIsVideo(tempImagePath)) {
+          tempPreviewImageList.push(tempImagePath);
+        }
+      }
+      wx.previewImage({
+        urls: tempPreviewImageList,
+        current: e.currentTarget.dataset.src
+      })
+    },
+
+    /**
+     * 点击预览视频
+     */
+    tapVideoItem: function (e) {
+      let videoContext = wx.createVideoContext(e.currentTarget.dataset.id, this);
+      videoContext.requestFullScreen();
+      videoContext.play();
+    },
+
+    /**
+     * 播放到最后
+     */
+    playEnd: function (e) {
+      let videoContext = wx.createVideoContext(e.currentTarget.id, this);
+      videoContext.exitFullScreen();
+    },
+
+    /**
      * 点击删除
      */
     deleteImageAction: function (e) {
@@ -115,7 +170,7 @@ Component({
       // 要删除的地址
       let tempImagePath = e.currentTarget.dataset.imagepath;
       // 选中图片中删除数据
-      this.data.uploadImagePathList.splice(tempIndex, 1);
+      this.data.imagePathList.splice(tempIndex, 1);
       // 如果已经上传过，将上传数据中对应的数据删除
       if (tempIndex < this.data.serviceImagePathList.length) {
         this.data.serviceImagePathList.splice(tempIndex, 1);
@@ -125,7 +180,7 @@ Component({
         this.data.currentUploadIndex--;
       }
       this.setData({
-        uploadImagePathList: this.data.uploadImagePathList,
+        imagePathList: this.data.imagePathList,
         serviceImagePathList: this.data.serviceImagePathList,
         currentUploadIndex: this.data.currentUploadIndex
       })
@@ -136,55 +191,89 @@ Component({
      */
     tapAddNewUploadImage: function() {
       let count = 0;
-      if (this.data.selectImageMode == "cover") {
+      if (this.data.selectMode == "cover") {
         // 覆盖 可选择最大数量
         count = this.data.maxImageCount;
-      } else if (this.data.selectImageMode == "append") {
+      } else if (this.data.selectMode == "append") {
         // 追加 可选择 除去已选择数量的 剩余数量
         // 如果已经超过了数量 提醒用户
-        if (this.data.uploadImagePathList.length >= this.data.maxImageCount) {
+        if (this.data.imagePathList.length >= this.data.maxImageCount) {
           wx.showToast({
             title: '最多选择' + this.data.maxImageCount + "张图片",
             icon: 'none'
           })
           return;
         }
-        count = this.data.maxImageCount - this.data.uploadImagePathList.length;
+        count = this.data.maxImageCount - this.data.imagePathList.length;
       } else {
-        throw new Error("leeImageUpload selectImageMode 错误");
+        throw new Error("leeImageUpload selectMode 错误");
         return;
       }
       let that = this;
-      wx.chooseImage({
-        count: count,
-        success: function(res) {
-          if (that.data.selectImageMode == "cover") {
-            // 覆盖 
-            // 覆盖 上传列表
-            // 重置 返回值列表
-            // 重置 上传下标
-            that.setData({
-              uploadImagePathList: res.tempFilePaths,
-              serviceImagePathList: [],
-              currentUploadIndex: 0,
-            })
-          } else if (that.data.selectImageMode == "append") {
-            // 追加
-            // 上传列表 追加
-            // 返回值列表不动 等待上传后追加
-            // 下标不动 上传完成后已经+1 当前下标正确
-            that.data.uploadImagePathList = that.data.uploadImagePathList.concat(res.tempFilePaths);
-            that.setData({
-              uploadImagePathList: that.data.uploadImagePathList,
-            })
+      wx.showActionSheet({
+        itemList: ["选择图片","选择视频"],
+        success(res) {
+          if (res.tapIndex == 0) {
+            let tempImageParam = {};
+            tempImageParam.sourceType = that.data.imageSourceType;
+            tempImageParam.count = count;
+            tempImageParam.success = function success(res) {
+              if (that.data.selectMode == "cover") {
+                // 覆盖 
+                // 覆盖 上传列表
+                // 重置 返回值列表
+                // 重置 上传下标
+                that.setData({
+                  imagePathList: res.tempFilePaths,
+                  serviceImagePathList: [],
+                  currentUploadIndex: 0,
+                })
+              } else if (that.data.selectMode == "append") {
+                // 追加
+                // 上传列表 追加
+                // 返回值列表不动 等待上传后追加
+                // 下标不动 上传完成后已经+1 当前下标正确
+                that.data.imagePathList = that.data.imagePathList.concat(res.tempFilePaths);
+                that.setData({
+                  imagePathList: that.data.imagePathList,
+                })
+              }
+              // 如果开启了自动上传 开始上传
+              if (that.data.autoUpload) {
+                that.setData({
+                  startUpload: true
+                })
+              }
+            }
+            wx.chooseImage(tempImageParam);
+          } else {
+            let tempVideoParam = {};
+            if (that.data.videoMaxLength > 0) {
+              tempVideoParam.maxDuration = that.data.videoMaxLength;
+            }
+            tempVideoParam.sourceType = that.data.videoSourceType;
+            tempVideoParam.success = function success(res) {
+              if (that.data.selectMode == "cover") {
+                that.setData({
+                  imagePathList: [res.tempFilePath],
+                  serviceImagePathList: [],
+                  currentUploadIndex: 0,
+                })
+              } else if (that.data.selectMode == "append") {
+                that.data.imagePathList.push(res.tempFilePath);
+                that.setData({
+                  imagePathList: that.data.imagePathList,
+                })
+              }
+              if (that.data.autoUpload) {
+                that.setData({
+                  startUpload: true
+                })
+              }
+            }
+            wx.chooseVideo(tempVideoParam);
           }
-          // 如果开启了自动上传 开始上传
-          if (that.data.autoUpload) {
-            that.setData({
-              startUpload: true
-            })
-          }
-        },
+        }
       })
     },
 
@@ -222,7 +311,7 @@ Component({
       // 上传地址
       tempParam.url = this.data.uploadUrl;
       // 图片地址
-      tempParam.filePath = this.data.uploadImagePathList[this.data.currentUploadIndex];
+      tempParam.filePath = this.data.imagePathList[this.data.currentUploadIndex];
       if (this.data.name != null && this.data.name.length > 0) {
         tempParam.name = this.data.name;
       }
@@ -245,7 +334,7 @@ Component({
         that.setData({
           serviceImagePathList: that.data.serviceImagePathList
         })
-        if (that.data.currentUploadIndex >= that.data.uploadImagePathList.length) {
+        if (that.data.currentUploadIndex >= that.data.imagePathList.length) {
           // 下标超出 上传列表长度 上传完成
           that.setData({
             currentUploadIndex: that.data.currentUploadIndex,
@@ -270,8 +359,8 @@ Component({
           title: '第' + that.data.currentUploadIndex + "张图片上传失败",
           icon: 'none'
         })
-        that.data.uploadImagePathList.splice(that.data.currentUploadIndex, 1);
-        if (that.data.currentUploadIndex >= that.data.uploadImagePathList.length) {
+        that.data.imagePathList.splice(that.data.currentUploadIndex, 1);
+        if (that.data.currentUploadIndex >= that.data.imagePathList.length) {
           that.setData({
             currentUploadIndex: 0,
             uploadImageProgress: -1,

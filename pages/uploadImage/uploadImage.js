@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imageList: [
+      "https://img.taochonghui.com/weapp/banner01.jpg",
+      "https://img.taochonghui.com/weapp/banner02.jpg",
+      "https://media.w3.org/2010/05/sintel/trailer.mp4",
+      "https://img.taochonghui.com/weapp/banner01.jpg",
+      "https://img.taochonghui.com/weapp/banner02.jpg"
+    ],
   },
 
   /**
@@ -69,5 +75,6 @@ Page({
    */
   uploadComplete: function(e) {
     console.log("上传图片组件 上传完成 \n" +JSON.stringify(e));
+
   }
 })
