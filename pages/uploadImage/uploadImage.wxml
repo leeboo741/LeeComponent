@@ -9,6 +9,8 @@
                 startUpload='{{false}}'
                 autoUpload='{{true}}'
                 bind:upload-complete='uploadComplete'
+                bind:delete-image='deleteImage'
+                bind:addnew='addNewImage'
                 ableDelete='{{true}}'
                 selectMode='append'
                 maxImageCount='{{9}}'

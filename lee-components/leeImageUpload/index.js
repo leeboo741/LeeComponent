@@ -184,6 +184,19 @@ Component({
         serviceImagePathList: this.data.serviceImagePathList,
         currentUploadIndex: this.data.currentUploadIndex
       })
+
+      let callBackFunctionName = 'delete-image'; // 触发事件 方法名
+      let myEventDetail = {
+        uploadReturnDataList: this.data.serviceImagePathList,
+        imagePathList: this.data.imagePathList,
+        deleteIndex: tempIndex,
+      }; // detail对象，提供给事件监听函数
+      let myEventOption = {
+        'bubbles': false, // 事件是否冒泡
+        'composed': false, // 事件是否可以穿越组件边界，为false时，事件将只能在引用组件的节点树上触发，不进入其他任何组件内部
+        'capturePhase': false, // 事件是否拥有捕获阶段
+      }; // 触发事件的选项
+      this.triggerEvent(callBackFunctionName, myEventDetail, myEventOption);
     },
 
     /**
@@ -238,6 +251,19 @@ Component({
                   imagePathList: that.data.imagePathList,
                 })
               }
+
+              let callBackFunctionName = 'addnew'; // 触发事件 方法名
+              let myEventDetail = {
+                imagePathList: that.data.imagePathList,
+                newPathList: res.tempFilePaths
+              }; // detail对象，提供给事件监听函数
+              let myEventOption = {
+                'bubbles': false, // 事件是否冒泡
+                'composed': false, // 事件是否可以穿越组件边界，为false时，事件将只能在引用组件的节点树上触发，不进入其他任何组件内部
+                'capturePhase': false, // 事件是否拥有捕获阶段
+              }; // 触发事件的选项
+              that.triggerEvent(callBackFunctionName, myEventDetail, myEventOption);
+
               // 如果开启了自动上传 开始上传
               if (that.data.autoUpload) {
                 that.setData({
@@ -265,6 +291,19 @@ Component({
                   imagePathList: that.data.imagePathList,
                 })
               }
+
+              let callBackFunctionName = 'addnew'; // 触发事件 方法名
+              let myEventDetail = {
+                imagePathList: that.data.imagePathList,
+                newPathList: [res.tempFilePath]
+              }; // detail对象，提供给事件监听函数
+              let myEventOption = {
+                'bubbles': false, // 事件是否冒泡
+                'composed': false, // 事件是否可以穿越组件边界，为false时，事件将只能在引用组件的节点树上触发，不进入其他任何组件内部
+                'capturePhase': false, // 事件是否拥有捕获阶段
+              }; // 触发事件的选项
+              that.triggerEvent(callBackFunctionName, myEventDetail, myEventOption);
+
               if (that.data.autoUpload) {
                 that.setData({
                   startUpload: true

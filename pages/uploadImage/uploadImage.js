@@ -74,7 +74,20 @@ Page({
    * 上传完成
    */
   uploadComplete: function(e) {
-    console.log("上传图片组件 上传完成 \n" +JSON.stringify(e));
+    console.log("上传图片组件 上传完成： \n" +JSON.stringify(e));
+  },
 
+  /**
+   * 删除图片
+   */
+  deleteImage: function(e) {
+    console.log("上传图片组件 删除图片：\n" + JSON.stringify(e));
+  },
+
+  /**
+   * 新增图片
+   */
+  addNewImage: function(e) {
+    console.log("上传图片组件 新增图片：\n" + JSON.stringify(e));
   }
 })
