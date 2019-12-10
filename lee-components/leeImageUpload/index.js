@@ -54,6 +54,10 @@ Component({
       type: Boolean,
       value: false,
     }, // 上传开关 true 开始上传 false 取消上传
+    ableVideo: {
+      type: Boolean,
+      value: true,
+    }, // 是否允许视频
     videoMaxLength: {
       type: Number,
       value: DEFAULT_MAX_VIDEO_LENGTH,
@@ -176,7 +180,7 @@ Component({
         this.data.serviceImagePathList.splice(tempIndex, 1);
       }
       // 如果已经上传过，上传的下标也要回退一格
-      if (tempIndex <= this.data.currentTarget) {
+      if (tempIndex <= this.data.currentUploadIndex) {
         this.data.currentUploadIndex--;
       }
       this.setData({
@@ -222,9 +226,13 @@ Component({
         throw new Error("leeImageUpload selectMode 错误");
         return;
       }
+      let tempItemList = ["选择图片"];
+      if (this.data.ableVideo) {
+        tempItemList.push("选择视频");
+      }
       let that = this;
       wx.showActionSheet({
-        itemList: ["选择图片","选择视频"],
+        itemList: tempItemList,
         success(res) {
           if (res.tapIndex == 0) {
             let tempImageParam = {};

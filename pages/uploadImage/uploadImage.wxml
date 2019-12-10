@@ -18,8 +18,8 @@
                 imageSourceType="{{['album', 'camera']}}"
                 videoSourceType="{{['album', 'camera']}}"
                 imagePathList='{{}}'
-                showAddNewButton='{{true}}'>
-
+                showAddNewButton='{{true}}'
+                ableVideo='{{false}}'>
 </i-image-upload>
 
 
