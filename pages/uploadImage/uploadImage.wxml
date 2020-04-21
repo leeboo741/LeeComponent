@@ -3,7 +3,7 @@
 </i-navigation-bar>
 <!-- uploadUrl和name 里面的属性 自己用的时候根据自己的服务器地址和要求去改 我这里用的是自己的测试地址和接口 -->
 <!-- 另外如果要使用上传功能 关注一下 组件里面有些东西要自己去调整一下 例如返回值之类的，要不然你外面接受到的就不一定是什么东西了 -->
-<i-image-upload uploadUrl='http://192.168.3.103:5050/file/upload'
+<i-image-upload uploadUrl='http://192.168.3.188:7070/file/upload'
                 name='multipartFile'
                 formData='{{}}'
                 startUpload='{{false}}'

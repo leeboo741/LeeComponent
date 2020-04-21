@@ -11,7 +11,8 @@
     "pages/placeholdImage/placeholdImage",
     "pages/loadingFootItem/loadingFootItem",
     "pages/progress/progress",
-    "pages/uploadImage/uploadImage"
+    "pages/uploadImage/uploadImage",
+    "pages/imageView/imageView"
   ],
   "window": {
     "backgroundTextStyle": "light",

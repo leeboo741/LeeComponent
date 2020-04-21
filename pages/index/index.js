@@ -53,6 +53,10 @@ Page({
       {
         name: "图片选择和上传 -- leeImageUpload",
         target: "/pages/uploadImage/uploadImage",
+      },
+      {
+        name: '图片和视频展示 -- leeImageView',
+        target: '/pages/imageView/imageView',
       }
     ],
   },

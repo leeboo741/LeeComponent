@@ -7,7 +7,7 @@
           wx:for-index='uploadImageIndex'
           wx:key='{{uploadImageIndex}}'>
       <i-image wx:if='{{!parse.isVideo(uploadImageItem)}}'
-               imageSrc='{{uploadImageItem}}'
+               imageSrc='{{parse.getSrcPath(uploadImageItem)}}'
                i-class='upload-image-item-image'
                catchtap="tapImageItem"
                data-index='{{uploadImageIndex}}'
@@ -15,15 +15,15 @@
       </i-image>
       <block wx:else>
         <video class='upload-image-item-image'
-               src="{{uploadImageItem}}"
-               id='{{uploadImageItem}}'
+               src="{{parse.getSrcPath(uploadImageItem)}}"
+               id='{{parse.getSrcPath(uploadImageItem)}}'
                bindended='playEnd'>
         </video>
         <view class="video-tap-box"
               catchtap="tapVideoItem"
               data-index='{{uploadImageIndex}}'
-              data-src='{{uploadImageItem}}'
-              data-id='{{uploadImageItem}}'>
+              data-src='{{parse.getSrcPath(uploadImageItem)}}'
+              data-id='{{parse.getSrcPath(uploadImageItem)}}'>
         </view>
       </block>
       <view class="progress-box"
@@ -65,17 +65,40 @@
       }
       return true;
     },
+    getSrcPath: function(path) {
+      if (path != null && typeof path == "string") {
+        return path;
+      } else if (path != null && typeof path == "object") {
+        return path.fileAddress;
+      }
+      return "";
+    },
     isVideo: function(path) {
-      var index = path.lastIndexOf(".");
-      var suffix = path.substring(index + 1);
-      if (suffix == "mp4" ||
-        suffix == "mov" ||
-        suffix == "m4v" ||
-        suffix == "3gp" ||
-        suffix == "avi" ||
-        suffix == "m3u8" ||
-        suffix == "webm") {
-        return true;
+      if (path != null && typeof path == "string") {
+        var index = path.lastIndexOf(".");
+        var suffix = path.substring(index + 1);
+        if (suffix == "mp4" ||
+          suffix == "mov" ||
+          suffix == "m4v" ||
+          suffix == "3gp" ||
+          suffix == "avi" ||
+          suffix == "m3u8" ||
+          suffix == "webm") {
+          return true;
+        }
+        return false;
+      } else if (path != null && typeof path == "object"){
+        var type = path.fileTypeEnum.toLowerCase();
+        if (type == "mp4" ||
+          type == "mov" ||
+          type == "m4v" ||
+          type == "3gp" ||
+          type == "avi" ||
+          type == "m3u8" ||
+          type == "webm") {
+          return true;
+        }
+        return false;
       }
       return false;
     },

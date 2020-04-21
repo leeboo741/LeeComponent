@@ -1,0 +1,17 @@
+/* pages/imageView.wxss */
+.image-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.image-item{
+  width: 33.333333%;
+}
+.image-view{
+  height: 280rpx;
+  width: 100%;
+}
+.image-content{
+  border-radius: 10rpx;
+}

@@ -1,0 +1,14 @@
+<!--pages/imageView.wxml-->
+<i-navigation-bar title='图片和视频展示-leeImageView'>
+</i-navigation-bar>
+
+<view class="image-box">
+  <view class="image-item"
+        wx:for='{{imageSrcs}}'>
+    <i-imageview i-class='image-view'
+                 i-image-class="image-content"
+                 imageSrc="{{item}}">
+
+    </i-imageview>
+  </view>
+</view>
