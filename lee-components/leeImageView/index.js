@@ -84,6 +84,12 @@ Component({
 
     // 资源对象
     imageSrc: null, // 图片地址
+
+    // 控制
+    showPreview: {
+      type: Boolean,
+      value: false,
+    }, // 是否 预览
   },
 
   /**

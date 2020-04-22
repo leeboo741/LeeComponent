@@ -39,10 +39,6 @@ Page({
         target: "/pages/phoneCallButton/phoneCallButton"
       },
       {
-        name: "带占位图Image -- leePlaceholdImage",
-        target: "/pages/placeholdImage/placeholdImage"
-      },
-      {
         name: "loadmore底部item -- leeLoadingFootItem",
         target: "/pages/loadingFootItem/loadingFootItem"
       },
