@@ -190,7 +190,7 @@ Component({
      */
     getSrcType: function (src) {
       if (src != null && typeof src == 'string') {
-        return this.compareVideoType(src);
+        return this.compareSubVideoType(src);
       } else if (src != null && typeof src == 'object') {
         return this.compareVideoType(src.fileTypeEnum);
       } else {
@@ -199,21 +199,39 @@ Component({
       }
     },
 
-    /**
-     * 比较是否是视频
-     * @parma 文件路径
-     */
-    compareVideoType: function (path) {
+    compareSubVideoType(path) {
       path = path.toLowerCase();
       for (var index = 0; index < this.data.videoTypeList.length; index++) {
-        var type = this.data.videoTypeList[index];
+        var type = '.' + this.data.videoTypeList[index];
         if (path.indexOf(type) != -1) {
           return Image_Type_Video;
         }
       }
       for (var index = 0; index < this.data.imageTypeList.length; index++) {
-        var type = this.data.imageTypeList[index];
+        var type = '.' + this.data.imageTypeList[index];
         if (path.indexOf(type) != -1) {
+          return Image_Type_Image;
+        }
+      }
+      // throw new Error("LeeImageView ==> 无法读取当前路径文件类型 当前路径:"+path);
+      return Image_Type_Image;
+    },
+
+    /**
+     * 比较类型 确定 文件类型
+     * @type 文件类型
+     */
+    compareVideoType: function (type) {
+      type = type.toLowerCase();
+      for (var index = 0; index < this.data.videoTypeList.length; index++) {
+        var tempType = this.data.videoTypeList[index];
+        if (tempType == type) {
+          return Image_Type_Video;
+        }
+      }
+      for (var index = 0; index < this.data.imageTypeList.length; index++) {
+        var tempType = this.data.imageTypeList[index];
+        if (tempType == type) {
           return Image_Type_Image;
         }
       }
