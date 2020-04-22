@@ -7,7 +7,9 @@
         wx:for='{{imageSrcs}}'>
     <i-imageview i-class='image-view'
                  i-image-class="image-content"
-                 imageSrc="{{item}}">
+                 imageSrc="{{item}}"
+                 contentStyle='1'
+                 contentMargin='25rpx'>
 
     </i-imageview>
   </view>

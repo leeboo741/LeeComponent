@@ -8,6 +8,10 @@ const Image_Type_Image = 0;
 const Image_Type_Video = 1;
 const Image_Type_Unkown = -1;
 
+const Image_Content_Style_None = 'none'; // 无样式
+const Image_Content_Style_Round = 'round'; // 圆
+const Image_Content_Style_Card = 'card'; // 方
+
 Component({
 
   /** ==================================================== */
@@ -81,6 +85,16 @@ Component({
       type: String,
       value: "/lee-components/leeImageView/placeholder.jpg",
     }, // 占位图地址
+
+    // common
+    contentMargin: {
+      type: String,
+      value: "0rpx, 0rpx, 0rpx, 0rpx",
+    }, // 内容边距
+    contentStyle: { 
+      type: String,
+      value: Image_Content_Style_None, // none 无样式 card 方块 round 圆形
+    }, // 内容样式
 
     // 资源对象
     imageSrc: null, // 图片地址
@@ -203,8 +217,8 @@ Component({
           return Image_Type_Image;
         }
       }
-      throw new Error("LeeImageView ==> 无法读取当前路径文件类型 当前路径:"+path);
-      return Image_Type_Unkown;
+      // throw new Error("LeeImageView ==> 无法读取当前路径文件类型 当前路径:"+path);
+      return Image_Type_Image;
     },
 
   },

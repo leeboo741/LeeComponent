@@ -1,9 +1,10 @@
 <!--lee-components/leeImageView/index.wxml-->
 
 <view class="image-box i-class">
-  <view class="content-box">
+  <view class="content-box" style='margin:{{contentMargin}}'> 
     <block wx:if='{{srcType==0}}'>
       <image class="image-content i-image-class"
+            style='{{parse.getContentStyle(contentStyle)}}'
             src='{{src}}'
             mode="{{mode}}"
             lazy-load="{{lazyLoad}}"
@@ -13,12 +14,14 @@
       </image>
 
       <image class="image-content placehold-image"
+            style='{{parse.getContentStyle(contentStyle)}}'
             src='{{placeholderSrc}}'
             mode="{{placeholderMode}}"
             wx:if="{{parse.showPlaceholderImage(loadState, src)}}">
       </image>
 
       <image class="image-content fail-image"
+            style='{{parse.getContentStyle(contentStyle)}}'
             src='{{parse.getFailSrc(failSrc, placeholderSrc)}}'
             mode="{{failMode}}"
             wx:if="{{parse.showFailImage(loadState, src)}}">
@@ -27,6 +30,7 @@
 
     <block wx:elif='{{srcType==1}}'>
       <video class="image-content i-image-class"
+            style='{{parse.getContentStyle(contentStyle)}}'
             src="{{src}}"
             id="{{src}}"
             bindended="playEnd"
@@ -47,6 +51,7 @@
 
     <block wx:else>
       <image class="image-content fail-image"
+            style='{{parse.getContentStyle(contentStyle)}}'
             src='{{parse.getFailSrc(failSrc, placeholderSrc)}}'
             mode="{{mode}}">
       </image>
@@ -60,6 +65,17 @@
 
 <wxs module='parse'>
   module.exports={
+    getContentStyle: function(contentStyle){
+      if (contentStyle == 'none') {
+        return "";
+      } else if (contentStyle == 'round') {
+        return "border-radius: 50%";
+      } else if (contentStyle == 'card') {
+        return "border-radius: 15rpx";
+      } else {
+        return "";
+      }
+    },
     hiddenImage: function(state, imageSrc) {
       if (state != 1) {
         return true;

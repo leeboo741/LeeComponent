@@ -6,6 +6,7 @@ Page({
    */
   data: {
     imageSrcs: [
+      "https://wx.qlogo.cn/mmopen/vi_32/q0j4twgtftkeec8lwbtkpgdibrwfshiabjicglf7ox1gcqi5h21toailo3tlymwgildabxd1icxlkltcchvvicvqozg/132",
       "https://img.taochonghui.com/weapp/banner01.jpg",
       "https://img.taochonghui.com/weapp/banner02.jpg",
       "https://media.w3.org/2010/05/sintel/trailer.mp4",
